@@ -1,0 +1,35 @@
+/**
+ * File:    0-HelloCGA.cga
+ * Created: 14 May 2015 14:32:56 GMT
+ * Author:  kikita
+ */
+
+version "2015.0"
+import Facade_Textures:"/ESRI.lib/rules/Facades/Facade_Textures.cga"
+
+@Handle(shape = Mass)
+attr height = rand(3,10)
+
+Lot  -->  
+   #extrude(5)  
+   extrude(height)  
+   color("#696969")
+   Mass
+
+
+Mass -->
+   comp(f){top:S_Roof| side:S_Wall}
+   
+    # ÎÝ¶¥
+    S_Roof-->
+      roofGable(20, 0.5, 0.5)
+      color("#844200")
+      
+    # Ç½Ãæ  
+    S_Wall-->
+      #setupProjection(0, scope.xy, '1, '1)
+     # projectUV(0) 
+      #texture("u_f002_t004_Residential_000.jpg")
+      Facade_Textures.Generate
+      
+ 

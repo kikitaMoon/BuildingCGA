@@ -1,0 +1,455 @@
+/**
+ *
+ Authors:
+ Matthias Buehler, Esri R&D Center Zurich
+ Seiler & Seiler, http://seilerseiler.com
+ */
+
+version "2014.1"
+
+import centeredText : "rules/helpers/CenteredText.cga"
+
+############################################################
+# ATTRIBUTES
+############################################################
+
+@Group ("PARCEL", 0)				@Order(0)
+attr parcelArea 					= 0			# sample from parcel shape's object attr
+
+@Group ("ZONING", 1)				@Order(0)
+attr visualizeBrokenLaw				= false
+
+@Group ("BUILDING", 2)				@Order(0)
+attr createBuilding					= true
+@Group ("BUILDING")					@Order(1)
+attr numberFloors					= 6
+@Group ("BUILDING")					@Order(2)
+attr groundFloorHeight				= 5.5
+@Group ("BUILDING")					@Order(3)
+attr upperFloorHeight				= 3.5
+
+@Group ("BUILDING USAGES", 3)		@Order(0)			@Range("Assembly","Agricultural","Educational","Industry","Mercantile","Office","Public","Residential","Service","Storage","Transport","Utility","Other","Unknown")
+attr buildingUsage1					= ""
+@Group ("BUILDING USAGES")			@Order(1)			@Range("Assembly","Agricultural","Educational","Industry","Mercantile","Office","Public","Residential","Service","Storage","Transport","Utility","Other","Unknown")
+attr buildingUsage2					= ""
+@Group ("BUILDING USAGES")			@Order(2)			@Range("Assembly","Agricultural","Educational","Industry","Mercantile","Office","Public","Residential","Service","Storage","Transport","Utility","Other","Unknown")
+attr buildingUsage3					= ""
+
+@Group ("BUILDING USAGES")			@Order(3)
+attr startFloorbuildingUsage2		= 1000
+@Group ("BUILDING USAGES")			@Order(4)
+attr startFloorbuildingUsage3		= 1000
+
+@Group ("BUILDING VOLUME", 4)		@Order(0)
+attr volumeChangeFloorID			= 15
+@Group ("BUILDING VOLUME")			@Order(1)
+attr volumeChangeRotation			= 360
+@Group ("BUILDING VOLUME")			@Order(2)
+attr relVolumeChangeSplit			= .5
+
+@Group ("FACADES", 5)				@Order(0)
+attr tileWidth						= 7
+@Group ("BUILDING VOLUME")			@Order(1)
+attr sideWidth						= 2
+@Group ("BUILDING VOLUME")			@Order(2)
+attr windowBaseHeight				= .5
+@Group ("BUILDING VOLUME")			@Order(3)
+attr windowTopHeight				= .5
+
+############################################################
+# GENERIC ATTRIBUTES
+############################################################
+
+@Hidden
+attr currentFloorID = 0
+@Hidden
+attr floorType = ""
+@Hidden
+attr floorUsage = ""
+@Hidden
+attr surfaceType = ""
+@Hidden
+attr lawState = ""
+
+
+############################################################
+# FUNCTIONS
+############################################################
+
+buildingUsageColor (buildingUsage) =
+	case buildingUsage == "Assembly"				: "#f8c283"
+	case buildingUsage == "Agricultural"			: "#cccc00"
+	case buildingUsage == "Educational"				: "#ad89ba"
+	case buildingUsage == "Industry"				: "#7a85c8"
+	case buildingUsage == "Mercantile"				: "#777777"
+	case buildingUsage == "Office"					: "#B884D5"
+	case buildingUsage == "Public"					: "#BCD4D5"
+	case buildingUsage == "Residential"				: "#bb4646"
+	case buildingUsage == "Service"					: "#d08c6e"
+	case buildingUsage == "Storage"					: "#444444"
+	case buildingUsage == "Transport"				: "#444444"
+	case buildingUsage == "Utility"					: "#444444"
+	case buildingUsage == "Other"					: "#444444"
+	case buildingUsage == "Unknown"					: "#444444"
+	else /*error*/									: "#ffffff"
+
+
+############################################################
+# START SHAPES
+############################################################
+
+
+@StartRule
+Footprint -->
+	case createBuilding :
+		alignScopeToAxes(y)
+		report("Density", geometry.area / parcelArea)
+		t(0,0.01,0) 				# prevent occlusion overlaps
+		BuildingExtrusion
+		centeredText.MeasureText
+		ExtrusionText
+	else:
+		Footprint.
+		centeredText.MeasureText
+		ExtrusionText
+
+############################################################
+# BUILDING EXTRUSION
+############################################################
+
+extrusionHeight = case currentFloorID == 0 : groundFloorHeight else : upperFloorHeight
+
+BuildingExtrusion -->
+	BuildingRecursion
+
+floorUsageFunction =
+	case currentFloorID >= startFloorbuildingUsage3 - 1 :
+		buildingUsage3
+	case currentFloorID >= startFloorbuildingUsage2 - 1 :
+		buildingUsage2
+	else :
+		buildingUsage1
+		
+BuildingRecursion -->
+	# recursively create floors	
+	case currentFloorID == rint(numberFloors) && numberFloors == 1:
+		# end recursion 1 floor, special case
+		color(buildingUsageColor(floorUsage))
+		RoofSlab.
+	case currentFloorID == rint(numberFloors):
+		# end recursion
+		NIL
+	case currentFloorID == rint(volumeChangeFloorID) - 1:
+		# volume change height, cutback
+		set(floorUsage, floorUsageFunction)
+		rotateScope(0,0,volumeChangeRotation)
+		split(x) {'relVolumeChangeSplit : set(surfaceType, "roof surface") Surfaces | ~1 : NewFloor}
+	else :
+		# new floor
+		set(floorUsage, floorUsageFunction)
+		NewFloor
+
+NewFloor -->
+	t(0,0,0.005) # prevent flickering
+	color(.7,.7,.7) FloorSlab.
+	extrude(world.y, extrusionHeight)
+	FloorTypes
+	# continue recursion
+	set (currentFloorID, currentFloorID + 1)
+	comp(f) {top : BuildingRecursion}
+	
+	# send the volume to reporting (special case)
+	set(surfaceType, "floor volume")
+	Surfaces
+
+############################################################
+# FLOOR TYPES
+############################################################
+
+FloorTypes -->
+	case currentFloorID == 0 :
+		set(floorType, "ground floor")
+		ZoningValidation
+	case currentFloorID == rint(numberFloors) -1:
+		set(floorType, "top floor")
+		ZoningValidation
+	else :
+		set(floorType, "standard floor")
+		ZoningValidation
+
+############################################################
+# ZONING VALIDATION
+############################################################
+
+ZoningValidation -->
+	case !visualizeBrokenLaw :
+		set(lawState, "legal")
+		FloorComp
+	else:
+		case inside :
+			set(lawState, "legal")
+			FloorComp
+		else :
+			set(lawState, "broken")
+			FloorComp
+
+############################################################
+# FLOOR TYPE
+############################################################
+
+FloorComp -->
+	case floorType == "top floor":
+		t(0,1000,0)
+		comp(f) {	top:
+						# top floor creates roof
+						alignScopeToAxes(y)
+						t(0,-1000,0)
+						set(surfaceType, "roof surface")
+						Surfaces
+					| side:
+						alignScopeToAxes(y)
+						t(0,-1000,0)
+						Facade}
+	else:
+		t(0,1000,0)
+		comp(f) { 	side:
+						alignScopeToAxes(y)
+						t(0,-1000,0)
+						Facade}
+
+############################################################
+# FACADES
+############################################################
+
+Facade -->
+	split(y) {windowBaseHeight : set(surfaceType, "facade surface") Surfaces | ~1 : split(x) {~ tileWidth : Tile}* | windowTopHeight : set(surfaceType, "facade surface") Surfaces}
+	
+Tile -->
+	split(x) {sideWidth : set(surfaceType, "facade surface") Surfaces | ~1 : set(surfaceType, "glass surface") Surfaces | sideWidth : set(surfaceType, "facade surface") Surfaces}
+
+############################################################
+# SURFACES
+############################################################
+
+Surfaces -->
+	# full floor volume, gets deleted.
+	case surfaceType == "floor volume" :
+		report("Floor Volume", geometry.volume)
+		report("GFA." + floorUsage + "_Area", geometry.area(bottom))
+		report("FAR", geometry.area(bottom) / parcelArea)
+		NIL
+	
+	# rest
+	case surfaceType == "roof surface" :
+		report("Roof Surface", geometry.area())
+		Coloring
+	case surfaceType == "facade surface" :
+		report("Facade Surface", geometry.area())
+		Coloring
+	case surfaceType == "glass surface" :
+		report("Glass Surface", geometry.area())
+		Coloring
+	else :
+		NIL
+
+############################################################
+# COLORING
+############################################################
+
+Coloring -->
+	case lawState == "broken" :
+		case surfaceType == "glass surface" :
+			set(material.opacity, 0.9)
+			color(1,0,0)
+		else:
+			color(1,0,0)
+	else:
+		case surfaceType == "glass surface" :
+			set(material.opacity, 0.3)
+			color(buildingUsageColor(floorUsage))
+			set(material.specular.r,20)
+			set(material.specular.g,20)
+			set(material.specular.b,20)		
+			set(material.shininess,10)
+			set(material.reflectivity, .6)
+		else:
+			color(buildingUsageColor(floorUsage))	
+
+
+############################################################
+# EXTRUSION TEXT
+############################################################
+
+ExtrusionText -->
+	extrude(world.y, groundFloorHeight + (numberFloors-1) * upperFloorHeight)
+	comp(f) {horizontal: NIL | all : VerticalHeight}
+
+VerticalHeight -->
+	set(trim.vertical, false)
+	color(1,0,0)
+	split(x){.1:
+		rotateScope(0,0,90)
+		r(-45,0,0)
+		centeredText.VerticalMeasureText | ~1: NIL}
+
+###############################
+# BUILDING STYLES
+###############################
+
+####################
+### INDUSTRY
+#
+
+style Industry_Office
+attr buildingUsage1 			= "Industry"
+attr numberFloors 				= 6
+attr groundFloorHeight 			= 5.5
+attr upperFloorHeight 			= 3.5
+attr tileWidth					= 3.5
+attr sideWidth					= 1.1
+attr windowBaseHeight			= .9
+attr windowTopHeight			= .5
+
+style Industry_Hangar
+attr buildingUsage1 			= "Industry"
+attr numberFloors 				= 3
+attr tileWidth					= 18
+attr sideWidth					= 6
+attr windowBaseHeight			= 0
+attr windowTopHeight			= 0
+
+style Industry_Restaurant
+attr buildingUsage1 			= "Industry"
+attr numberFloors 				= 1
+attr groundFloorHeight 			= 4.5
+attr tileWidth					= 4
+attr sideWidth					= .4
+attr windowBaseHeight			= .1
+attr windowTopHeight			= .6
+
+style Industry_Shops
+attr buildingUsage1 			= "Industry"
+attr numberFloors 				= 2
+attr groundFloorHeight 			= 4.5
+attr tileWidth					= 3.5
+attr sideWidth					= .8
+attr windowBaseHeight			= .1
+attr windowTopHeight			= .6
+
+####################
+### MERCANTILE
+#
+
+style Mercantile_Mall
+attr buildingUsage1 			= "Mercantile"
+attr numberFloors 				= 4
+attr groundFloorHeight 			= 5.5
+attr upperFloorHeight 			= 3.5
+
+style Mercantile_Shops
+attr buildingUsage1 			= "Mercantile"
+attr numberFloors				= 2
+
+####################
+### MIXED USE
+#
+
+style MixedUse_MercantileOffice
+attr buildingUsage1				= "Mercantile"
+attr buildingUsage2				= "Office"
+attr startFloorbuildingUsage2	= 2.0
+attr numberFloors				= 7
+attr groundFloorHeight			= 4.5
+attr upperFloorHeight			= 3.0
+
+style MixedUse_MercantileOfficeResidential
+attr buildingUsage1				= "Mercantile"
+attr buildingUsage2				= "Office"
+attr buildingUsage3				= "Residential"
+attr startFloorbuildingUsage2	= 2.0
+attr startFloorbuildingUsage3	= 6.0
+attr numberFloors				= 7
+attr groundFloorHeight			= 4.5
+attr upperFloorHeight			= 3.0
+attr sideWidth					= 0.5
+
+style MixedUse_MercantileResidential
+attr buildingUsage1				= "Mercantile"
+attr buildingUsage2				= "Residential"
+attr startFloorbuildingUsage2	= 2.0
+attr numberFloors				= 7.0
+attr groundFloorHeight			= 4.5
+attr upperFloorHeight			= 3.0
+attr sideWidth					= 0.0
+
+####################
+### MERCANTILE
+#
+
+style Public_Theatre
+attr buildingUsage1				= "Public"
+attr numberFloors				= 2
+attr groundFloorHeight			= 5
+attr upperFloorHeight			= 9
+attr sideWidth					= 0.0
+
+style Public_Metro extends Public_Theatre
+attr buildingUsage1				= "Public"
+attr numberFloors				= 2
+attr groundFloorHeight			= 5
+attr upperFloorHeight			= 6
+
+####################
+### ASSEMBLY
+#
+
+style Assembly_Library
+attr buildingUsage1				= "Assembly"
+attr numberFloors				= 4
+attr groundFloorHeight			= 4.5
+attr upperFloorHeight			= 4.5
+
+style Assembly_Library_Cafe
+attr buildingUsage1				= "Assembly"
+attr numberFloors				= 1
+attr groundFloorHeight			= 5
+
+####################
+### ASSEMBLY
+#
+
+style Educational_PrimaryEducation
+attr buildingUsage1 = "Educational"
+attr numberFloors = 3.0
+attr groundFloorHeight = 3.5
+attr upperFloorHeight = 3.5
+attr sideWidth = 0.0
+
+style Educational_Preschool
+attr buildingUsage1 = "Educational"
+attr numberFloors = 2.0
+attr groundFloorHeight = 3.5
+attr upperFloorHeight = 3.5
+attr sideWidth = 1.0
+
+style Educational_Sports
+attr buildingUsage1 = "Educational"
+attr numberFloors = 1.0
+attr groundFloorHeight = 10
+
+####################
+### RESIDENTIAL
+#
+
+style Residential_SingleFamilyHome
+attr buildingUsage1 = "Residential"
+attr numberFloors = 2
+attr groundFloorHeight = 3.0
+attr upperFloorHeight = 3.0
+
+style Residential_ApartmentBuilding
+attr buildingUsage1 = "Residential"
+attr numberFloors = 9
+attr groundFloorHeight = 3.0
+attr upperFloorHeight = 3.0
+

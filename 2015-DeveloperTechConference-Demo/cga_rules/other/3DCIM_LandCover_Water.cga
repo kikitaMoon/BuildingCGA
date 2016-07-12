@@ -1,0 +1,40 @@
+/**
+ * File:    riverWater.cga
+ * Created: 30 May 2013 19:24:39 GMT
+ * Author:  Craig
+ */
+
+version "2013.1"
+
+@Order(1) @Range("River","Stream","Pond","Lake","Ocean")
+attr Water_Type		= "River"
+
+@Range(0, 1.0)
+@Order(2)
+attr r = .44
+@Range(0, 1.0)
+@Order(3)
+attr g = .55
+@Range(0, 1.0)
+@Order(4)
+attr b = .44
+
+@StartRule
+Water -->
+// __waterparams_scale_speed
+	case Water_Type == "River" :
+		set(material.name, "river__water__waterparams_5_10")
+		color(.44,.55,.44) 
+	case Water_Type == "Stream" :
+		set(material.name, "river__water__waterparams_5_30")
+		color(.44,.55,.44)
+	case Water_Type == "Pond" :
+		set(material.name, "river__water__waterparams_1_3")
+		color(.2,.4,.45)
+	case Water_Type == "Lake" :
+		set(material.name, "river__water__waterparams_4_8")
+		color(.2,.4,.45)
+	case Water_Type == "Ocean" :	
+		set(material.name, "river__water__waterparams_15_20")
+		color(.2,.4,.45)	
+	else: X.

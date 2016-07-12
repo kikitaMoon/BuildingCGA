@@ -1,0 +1,86 @@
+/**
+ * File:    3DCIM_Building_Shells.cga
+ * Created: 1 Feb 2013 16:38:28 GMT
+ * Author:  Craig
+ */
+
+version "2013.1"
+
+
+##########################################################################################################################
+# Attributes
+##########################################################################################################################
+
+
+@Order(1) @Range("Show Floors","No Floors")
+attr Representation		= "Show Floors"
+@Order(2) @Range("Feet","Meters")
+attr Units = "Feet"
+@Order(3)
+attr facadeColor = "#E7E8E3"
+@Order(4)
+attr roofColor = "#E7E8E3"
+attr totalHeight = 0
+attr levelsAboveGround = 1
+@Range(0,1)
+attr opacityValue = 1
+
+floorHeight = (totalHeight/levelsAboveGround)
+
+const floor_tex				= "textured/grayfloors.jpg"
+
+##########################################################################################################################
+# Buildings
+##########################################################################################################################
+
+@StartRule
+Buildings -->
+	case levelsAboveGround > 0 && Representation == "Show Floors" && Units == "Feet":
+		extrude(totalHeight*.3048)
+		comp(f) { front : FrontFacade | side : SideFacade | top : Roof }
+	case levelsAboveGround > 0 && Representation == "Show Floors" && Units == "Meters":
+		extrude(totalHeight)
+		comp(f) { front : FrontFacade | side : SideFacade | top : Roof }
+	case levelsAboveGround == 0 && Representation == "Show Floors" && Units == "Feet":
+		extrude(totalHeight*.3048)
+		color(facadeColor)
+	case levelsAboveGround == 0 && Representation == "Show Floors" && Units == "Meters":
+		extrude(totalHeight)
+		color(facadeColor)
+	case Representation == "No Floors" && Units == "Meters":
+		extrude(totalHeight)
+		color(facadeColor)
+		set(material.opacity,opacityValue)
+	else :
+		extrude(totalHeight*.3048)
+		color(facadeColor)
+		set(material.opacity,opacityValue)
+		
+FrontFacade -->
+	case Units == "Feet":
+		projectUV(0)
+		texture(floor_tex)
+		tileUV(0, ~20, floorHeight*2*.3048)
+		set(material.opacity,opacityValue)
+	else :
+		projectUV(0)
+		texture(floor_tex)
+		tileUV(0, ~20, floorHeight*2)
+		set(material.opacity,opacityValue)
+
+SideFacade -->
+	case Units == "Feet":
+		projectUV(0)
+		texture(floor_tex)
+		tileUV(0, ~20, floorHeight*2*.3048)
+		set(material.opacity,opacityValue)
+	else :
+		projectUV(0)
+		texture(floor_tex)
+		tileUV(0, ~20, floorHeight*2)
+		set(material.opacity,opacityValue)
+			
+Roof -->
+		projectUV(0)
+		color(roofColor)
+		set(material.opacity,opacityValue)

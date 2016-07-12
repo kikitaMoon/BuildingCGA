@@ -1,0 +1,47 @@
+/**
+ * File:    ImportPlantLib.cga
+ * Created: 13 May 2015 05:34:39 GMT
+ * Author:  kikita
+ */
+
+version "2015.0"
+
+height = rand(10,20)
+
+# 导入Esri内置植物规则库
+
+import PlantDis:"/ESRI.lib/rules/Plants/Plant_Distributor.cga"
+ 
+
+@StartRule
+Lot--> 
+ shapeL(20,20) { shape : Plants | remainder : Mass}
+ 
+
+
+# 房屋
+Mass-->
+  extrude(height) House  
+  
+House -->  
+   comp(f){top:S_Roof| side:S_Wall}   
+    # 屋顶
+    S_Roof-->
+      roofGable(20, 1,1)
+      #color("#844200")
+      setupProjection(0, scope.xy, '1, '1)
+      projectUV(0)
+      texture("wall_wood_5.jpg") 
+    # 墙面  
+    S_Wall-->
+      setupProjection(0, scope.xy, '1, '1)
+      projectUV(0) 
+      texture("fac_15_floors3_tiles11.jpg")
+      
+ 
+# 植物
+Plants-->
+  PlantDis.Generate     
+      
+      
+      

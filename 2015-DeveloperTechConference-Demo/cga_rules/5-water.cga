@@ -1,0 +1,11 @@
+/**
+ * File:    water.cga
+ * Created: 12 May 2015 15:55:30 GMT
+ * Author:  kikita
+ */
+
+version "2015.0"
+
+WaterWave2-->      
+    set(material.name, "river__waterparams_15_20")
+		color(.2,.4,.45)  X.

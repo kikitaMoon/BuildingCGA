@@ -1,0 +1,11 @@
+/**
+ * File:    rule.cga
+ * Created: 12 Jan 2016 01:52:57 GMT
+ * Author:  kikita
+ */
+
+version "2015.0"
+
+attr AVG_HEIGHT = 10 
+
+Init --> extrude(AVG_HEIGHT)

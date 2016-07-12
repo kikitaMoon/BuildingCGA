@@ -1,0 +1,34 @@
+/**
+ *
+ Authors:
+ Matthias Buehler, Esri R&D Center Zurich
+ Seiler & Seiler, http://seilerseiler.com
+ */
+
+version "2014.1"
+
+import text: "helpers/Textrule.cga"
+
+
+attr Text = "hello world"
+attr Size = 1.5
+attr textElevation = .1
+
+MeasureText -->
+	comp(e) {all:
+		s('1,1,1)
+		i("builtin:cube")
+		alignScopeToAxes(y)
+		t(0,0,-Size/4)
+		comp(f) {bottom:
+			r(-90,0,0)
+			TextCreate(str(rint(scope.sx * 10.0) / 10.0))
+			}
+	}
+
+VerticalMeasureText -->
+	TextCreate(str(rint(scope.sx * 10.0) / 10.0))
+
+TextCreate(dimString) -->
+	t((scope.sx - (len(dimString)) * Size ) / 2,textElevation,0)
+	text.Letters(dimString,Size)

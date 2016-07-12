@@ -1,0 +1,262 @@
+/**
+ *
+ Authors:
+ Matthias Buehler, Esri R&D Center Zurich
+ Seiler & Seiler, http://seilerseiler.com
+ */
+
+
+version "2014.1"
+
+import FootprintShape_To_Building : "FootprintShape_To_Building.cga"
+
+############################################################
+# ATTRIBUTES
+############################################################
+
+@Group ("SHAPE_BASED_BUILDING", 0)			@Order(0)
+attr mainLength						= 15
+@Group ("SHAPE_BASED_BUILDING")				@Order(1)
+attr mainDepth						= 15
+@Group ("SHAPE_BASED_BUILDING")				@Order(2)			@Range("Rectangle", "ShapeL", "ShapeU")
+attr footprintForm					= "Rectangle"
+@Group ("SHAPE_BASED_BUILDING")				@Order(3)
+attr footprintMirrorWidth			= false
+@Group ("SHAPE_BASED_BUILDING")				@Order(4)
+attr footprintMirrorDepth			= false
+@Group ("SHAPE_BASED_BUILDING")				@Order(5)
+attr frontWingDepth					= 14
+@Group ("SHAPE_BASED_BUILDING")				@Order(6)
+attr backWingDepth					= 12
+@Group ("SHAPE_BASED_BUILDING")				@Order(7)
+attr sideWingDepth					= 14
+@Group ("SHAPE_BASED_BUILDING")				@Order(8)
+attr buildingRotation				= 360
+
+@Group ("GRID", 1)					@Order(0)
+attr gridWidth						= 1
+@Group ("GRID")						@Order(1)
+attr gridDepth						= 1
+@Group ("GRID")						@Order(2)
+attr gridDistWidth					= 20
+@Group ("GRID")						@Order(3)
+attr gridDistDepth					= 15
+
+############################################################
+# START SHAPES
+############################################################
+
+
+@StartRule
+Building_Marker -->
+	alignScopeToAxes(y)
+	s(mainLength, 0, mainDepth)
+	center(xz)
+	i("builtin:cube")
+		comp(f) {bottom: alignScopeToAxes(y) reverseNormals CreateGrid | all : NIL
+	}
+
+CreateGrid -->
+	s(gridWidth * scope.sx + (gridWidth - 1) * gridDistWidth, 0, gridDepth * scope.sz + (gridDepth - 1) * gridDistDepth)
+	center(xz)
+	GridSplitX
+
+GridSplitX -->
+	split(x) {{mainLength : GridSplitZ | ~gridDistWidth : NIL}* | mainLength : GridSplitZ } 
+
+GridSplitZ -->
+	split(z) {{mainDepth : FootprintBase | ~gridDistDepth : NIL}* | mainDepth : FootprintBase } 
+
+FootprintBase -->
+	r(scopeCenter, 0, buildingRotation, 0)
+	FootprintForm
+
+FootprintForm -->
+	case footprintForm == "Rectangle":
+		mirrorScope(footprintMirrorWidth, false, footprintMirrorDepth)
+		FootprintShape_To_Building.Footprint
+	case footprintForm == "ShapeL":
+		mirrorScope(footprintMirrorWidth, false, footprintMirrorDepth)
+		shapeL(frontWingDepth,sideWingDepth) { shape : FootprintShape_To_Building.Footprint | remainder : NIL}
+	case footprintForm == "ShapeO":
+		mirrorScope(footprintMirrorWidth, false, footprintMirrorDepth)
+		shapeO(frontWingDepth,sideWingDepth,backWingDepth,sideWingDepth) { shape : FootprintShape_To_Building.Footprint | remainder : NIL}
+	case footprintForm == "ShapeU":
+		mirrorScope(footprintMirrorWidth, false, footprintMirrorDepth)
+		shapeU(frontWingDepth,sideWingDepth,sideWingDepth) { shape : FootprintShape_To_Building.Footprint | remainder : NIL}
+	else :
+		mirrorScope(footprintMirrorWidth, false, footprintMirrorDepth)
+		FootprintShape_To_Building.Footprint
+
+
+###############################
+# FOOTPRINT ARRAY STYLES
+###############################
+
+####################
+### RECTANGULAR
+#
+
+style Rectangle_50x25__GridDist_30_20
+attr mainLength 		= 50.0
+attr mainDepth 			= 25.0
+attr gridDistWidth		= 30
+attr gridDistDepth		= 20
+
+style Rectangle_48x18__GridDist_25_20
+attr mainLength 		= 48.0
+attr mainDepth 			= 18.0
+attr gridDistWidth		= 25
+attr gridDistDepth		= 20
+
+style Rectangle_45x27__GridDist_30_20
+attr mainLength 		= 45
+attr mainDepth 			= 27
+attr gridDistWidth		= 30
+attr gridDistDepth		= 20
+
+style Rectangle_45x25__GridDist_10_15
+attr mainLength 		= 45.0
+attr mainDepth 			= 25.0
+attr gridDistWidth		= 10
+attr gridDistDepth		= 15
+
+style Rectangle_40x30__GridDist_30_20
+attr mainLength 		= 40.0
+attr mainDepth 			= 30.0
+attr gridDistWidth		= 30
+attr gridDistDepth		= 20
+
+style Rectangle_40x15__GridDist_25_25
+attr mainLength 		= 40.0
+attr mainDepth 			= 15.0
+attr gridDistWidth		= 25
+attr gridDistDepth		= 25
+
+style Rectangle_40x15__GridDist_25_20
+attr mainLength 		= 40.0
+attr mainDepth 			= 15.0
+attr gridDistWidth		= 25
+attr gridDistDepth		= 20
+
+style Rectangle_36x36__GridDist_30_30
+attr mainLength 		= 36.0
+attr mainDepth 			= 36.0
+attr gridDistWidth		= 30
+attr gridDistDepth		= 30
+
+style Rectangle_36x13__GridDist_25_20
+attr mainLength 		= 36.0
+attr mainDepth 			= 13.0
+attr gridDistWidth		= 25
+attr gridDistDepth		= 20
+
+style Rectangle_24x12__GridDist_25_20
+attr mainLength 		= 24.0
+attr mainDepth 			= 12.0
+attr gridDistWidth		= 25
+attr gridDistDepth		= 20
+
+style Rectangle_20x20__GridDist_10_10
+attr mainLength 		= 20.0
+attr mainDepth 			= 20.0
+attr gridDistWidth		= 10
+attr gridDistDepth		= 10
+
+style Rectangle_20x16__GridDist_15_15
+attr mainLength 		= 20
+attr mainDepth 			= 16
+attr gridDistWidth		= 15
+attr gridDistDepth		= 15
+
+style Rectangle_13x13__GridDist_18_18
+attr mainLength 		= 13.0
+attr mainDepth 			= 13.0
+attr gridDistWidth		= 18
+attr gridDistDepth		= 18
+
+style Rectangle_8x5__GridDist_10_10
+attr mainLength 		= 8.0
+attr mainDepth 			= 5.0
+attr gridDistWidth		= 10
+attr gridDistDepth		= 10
+
+
+####################
+### L SHAPED
+#
+
+style ShapeL_60x35__Wing_16__GridDist_30_30
+attr mainLength 		= 60.0
+attr mainDepth 			= 35.0
+attr footprintForm 		= "ShapeL"
+attr frontWingDepth 	= 16.0
+attr sideWingDepth 		= 16.0
+attr gridDistWidth		= 30
+attr gridDistDepth		= 30
+
+style ShapeL_60x30__Wing_15__GridDist_30_30
+attr mainLength 		= 60.0
+attr mainDepth 			= 30.0
+attr footprintForm 		= "ShapeL"
+attr frontWingDepth 	= 15.0
+attr sideWingDepth 		= 15.0
+attr gridDistWidth		= 30
+attr gridDistDepth		= 30
+
+style ShapeL_45x30__Wing_15__GridDist_30_30
+attr mainLength 		= 45.0
+attr mainDepth 			= 30.0
+attr footprintForm 		= "ShapeL"
+attr frontWingDepth 	= 15.0
+attr sideWingDepth 		= 15.0
+attr gridDistWidth		= 30
+attr gridDistDepth		= 30
+
+####################
+### U SHAPED
+#
+
+style ShapeU_50x25__Wing_12__GridDist_25_25
+attr mainLength 		= 50.0
+attr mainDepth 			= 25.0
+attr footprintForm 		= "ShapeU"
+attr frontWingDepth 	= 12
+attr backWingDepth 		= 12
+attr sideWingDepth 		= 12
+attr gridDistWidth		= 25
+attr gridDistDepth		= 25
+
+style ShapeU_60x32__Wing_14__GridDist_35_35
+attr mainLength 		= 60.0
+attr mainDepth 			= 32.0
+attr footprintForm 		= "ShapeU"
+attr frontWingDepth 	= 14
+attr backWingDepth 		= 14
+attr sideWingDepth 		= 14
+attr gridDistWidth		= 35
+attr gridDistDepth		= 35
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

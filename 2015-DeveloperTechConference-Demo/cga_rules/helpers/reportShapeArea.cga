@@ -1,0 +1,13 @@
+/**
+ *
+ Authors:
+ Matthias Buehler, Esri R&D Center Zurich
+ Seiler & Seiler, http://seilerseiler.com
+ */
+
+version "2014.1"
+
+
+Shape -->
+	report("Area", geometry.area)
+	X.

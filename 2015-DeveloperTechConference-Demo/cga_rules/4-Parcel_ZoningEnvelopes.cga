@@ -1,0 +1,287 @@
+/**
+ * File:    3DCIM_Parcel_ZoningEnvelopes.cga
+ * Created: 26 Feb 2013 10:27:47 GMT
+ * Author:  Thorsten Reitz
+ */
+
+version "2014.0"
+
+@Group("Rule Settings", 1)
+@Range("APA", "3DCIM", "International")
+attr colorSet = "APA"
+@Group("Rule Settings")
+attr unitConversionFactor = 0.3048
+attr opacity = 0.7
+
+@Group("Parcel Values", 2) @Hidden
+attr aspect = ""
+@Group("Parcel Values", 2) @Hidden
+attr value = ""
+@Group("Parcel Values", 2) @Hidden
+attr usageType = ""
+@Group("Parcel Values", 2) @Hidden
+attr ParcelFID = ""
+
+@Hidden
+attr maxHeight = 1
+
+@Hidden
+attr frontSetbackHeight = 0
+@Hidden
+attr frontSetbackAngle = 45
+@Hidden
+attr rearSetbackHeight = 0
+@Hidden
+attr rearSetbackAngle = 45
+
+@Hidden
+attr frontSetback = 0
+@Hidden
+attr sideSetback = 0
+@Hidden
+attr rearSetback = 0
+@Hidden
+attr allSetback = 0
+
+@Hidden
+attr lotArea = 0
+@Hidden
+attr parcelElevDiff = 0
+
+getAspectValue(aspectOp) =
+	listItem(value, listIndex(listClean(aspect), aspectOp))
+
+checkNaN(nanAttribute) =
+	case isnan(nanAttribute):
+		0
+	else:
+		nanAttribute
+
+getNormalizedAspect(aspectOp) =
+	checkNaN(float(getAspectValue(aspectOp)) * unitConversionFactor)
+	
+getScaleFactor(usageTypeOp) =
+	case usageTypeOp == "Open Space":
+		1
+	case usageTypeOp == "Protected Site":
+		1
+	else:
+		0
+
+getTotalHeight(usageTypeOp, parcelElevDiffOp) =
+	case usageTypeOp == "Open Space":
+		0.5
+	case usageTypeOp == "Protected Site":
+		0.5
+	else:
+		parcelElevDiffOp + getNormalizedAspect("TotalHeight")
+		
+getApaColor(usageType) =
+	case usageType == "Open Space":
+		"#A0AD85"
+	case usageType == "Protected Site":
+		"#9AEDB2"
+	case usageType == "Assembly":
+		"#627878"
+	case usageType == "Agricultural":
+		"#68B068"
+	case usageType == "Educational":
+		"#6E6EFF"
+	case usageType == "Industry":
+		"#8B61B3"
+	case usageType == "Retail":
+		"#E06565"
+	case usageType == "Office":
+		"#F0A8A8"
+	case usageType == "Public":
+		"#8AB89B"
+	case usageType == "Residential":
+		"#FDFD83"
+	case usageType == "Residential Single":
+		"#FDFD83"
+	case usageType == "Residential Multi":
+		"#E3E36B"
+	case usageType == "Service":
+		"#F76F6F"
+	case usageType == "Storage":
+		"#C26CF7"
+	case usageType == "Transport":
+		"#DADADA"
+	case usageType == "Utility":
+		"#D19FF1"
+	else:
+		"#ffffff"
+		
+get3dcimColor(usageType) =
+	case usageType == "Open Space":
+		"#D3DBAF"
+	case usageType == "Protected Site":
+		"#8AA64E"
+	case usageType == "Assembly":
+		"#FBBDEC"
+	case usageType == "Agricultural":
+		"#A6D96F"
+	case usageType == "Educational":
+		"#6A9EDE"
+	case usageType == "Industry":
+		"#8363C7"
+	case usageType == "Retail":
+		"#B08E5F"
+	case usageType == "Office":
+		"#8FB5A4"
+	case usageType == "Public":
+		"#B4E3F7"
+	case usageType == "Residential":
+		"#FFFFB7"
+	case usageType == "Residential Single":
+		"#FFFFB7"
+	case usageType == "Residential Multi":
+		"#FDFD7F"
+	case usageType == "Service":
+		"#F0C369"
+	case usageType == "Storage":
+		"#AD97DE"
+	case usageType == "Transport":
+		"#D399E8"
+	case usageType == "Utility":
+		"#BFBFBF"
+	else:
+		"#ffffff"
+		
+getIntlColor(usageType) =
+	case usageType == "Open Space":
+		"#D8C0E0"
+	case usageType == "Protected Site":
+		"#D35ED9"
+	case usageType == "Assembly":
+		"#C9AC69"
+	case usageType == "Agricultural":
+		"#DBD8A7"
+	case usageType == "Educational":
+		"#9090F0"
+	case usageType == "Industry":
+		"#CDF26F"
+	case usageType == "Retail":
+		"#67A867"
+	case usageType == "Office":
+		"#AAD4AA"
+	case usageType == "Public":
+		"#B3BAFC"
+	case usageType == "Residential":
+		"#F5816A"
+	case usageType == "Residential Single":
+		"#F5816A"
+	case usageType == "Residential Multi":
+		"#D65C5C"
+	case usageType == "Service":
+		"#7ABF89"
+	case usageType == "Storage":
+		"#E4FF9E"
+	case usageType == "Transport":
+		"#9E9B9B"
+	case usageType == "Utility":
+		"#FAF2D3"
+	else:
+		"#ffffff"
+
+LotInner --> Lot
+
+@StartRule
+Lot -->
+	cleanupGeometry(all, 0.5)
+	alignScopeToAxes(y)
+	set(parcelElevDiff, scope.sy)
+	s('1,'getScaleFactor( usageType ),'1)
+	LotAligned
+	
+LotAligned -->
+	print("ParcelFID: " + ParcelFID)
+	print("regulationAspect: " + aspect) 
+	print("regulationValue: " + value) 
+	set(lotArea, geometry.area)
+	set(allSetback, getNormalizedAspect("Setback"))
+	set(frontSetback, getNormalizedAspect("FrontSetback"))
+	set(sideSetback, getNormalizedAspect("LeftSetback"))
+	set(rearSetback, getNormalizedAspect("RearSetback"))
+	set(frontSetbackHeight, getNormalizedAspect("FrontBaseHeight"))
+	set(frontSetbackAngle, getNormalizedAspect("FrontSlope"))
+	set(rearSetbackHeight, getNormalizedAspect("RearBaseHeight"))
+	set(rearSetbackAngle, getNormalizedAspect("RearSlope"))
+	set(maxHeight, getTotalHeight(usageType, parcelElevDiff))
+	LotCheckFrontHeightSetback
+
+LotCheckFrontHeightSetback -->
+    case getAspectValue("FrontBaseHeight") == "" :
+    	set(frontSetbackHeight, maxHeight - 10)
+    	set(frontSetbackAngle, 45)
+    	LotCheckRearHeightSetback
+    else:
+    	LotCheckRearHeightSetback
+    	
+LotCheckRearHeightSetback -->
+	case getAspectValue("RearBaseHeight") == "" :
+    	set(rearSetbackHeight, maxHeight - 10)
+    	set(rearSetbackAngle, 45)
+    	LotCheckSetbacks
+    else:
+    	LotCheckSetbacks
+
+LotCheckSetbacks -->
+	case allSetback > 0:
+		set(frontSetback, allSetback)
+		set(sideSetback, allSetback)
+		set(rearSetback, allSetback)
+		LotWithSetback
+	case isnan(frontSetback) :
+		set(frontSetback, 0)
+	else :
+		LotWithSetback
+		
+	
+// Modify Setback in case of Row Houses
+LotWithSetback -->
+	case (usageType == "Residential" && scope.sx < 30): 
+		set(frontSetback, 2)
+		set(sideSetback, 0)
+		set(rearSetback, rearSetback / 2)
+		LotWithFinalSetback
+	else :
+		LotWithFinalSetback
+
+LotWithFinalSetback -->
+	setback( frontSetback ) { front: NIL | remainder: 
+		setback( rearSetback ) { back: NIL | remainder: 
+ 			setback(sideSetback) { right: NIL | remainder:
+ 				setback(sideSetback) { left: NIL | remainder:
+ 					print("Final setback parameters - frontSetback: " + frontSetback + ", rearSetback: " + rearSetback + ", sideSetback: " + sideSetback)
+					BuildableArea
+				}
+			}
+		}
+	}
+ 
+  
+BuildableArea -->
+	case geometry.area > 60:
+		report("Green Space area", lotArea - geometry.area)
+ 		report("GFA", geometry.area * maxHeight / 6)
+ 		print("Envelope parameters - maxHeight: " + maxHeight + ", frontSetbackHeight: " + frontSetbackHeight + ", frontSetbackAngle: " + frontSetbackAngle + ", rearSetbackHeight: " + rearSetbackHeight + ", rearSetbackAngle: " + rearSetbackAngle)
+    	envelope(world.up, maxHeight, frontSetbackHeight, frontSetbackAngle, rearSetbackHeight, rearSetbackAngle) 
+		BuildableVolume
+	else :
+		NIL
+	
+BuildableVolume -->
+	case colorSet == "APA":
+		color (getApaColor(usageType))
+		set(material.opacity,opacity)
+		ColoredBuildableVolume.
+	case colorSet == "3DCIM":
+		color (get3dcimColor(usageType))
+		set(material.opacity,opacity)
+		ColoredBuildableVolume.
+	else:
+		color (getIntlColor(usageType))
+		set(material.opacity,opacity)
+		ColoredBuildableVolume.
+		

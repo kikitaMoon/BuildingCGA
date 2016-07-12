@@ -1,0 +1,14 @@
+/**
+ * File:    7_Envelop.cga
+ * Created: 15 May 2014 16:27:50 GMT
+ * Author:  Administrator
+ */
+
+version "2013.1"
+
+Lot-->
+   envelope(normal, 200, 40, 30,40,30,40,30,40,30)
+   color(1,1,0)
+   set(material.opacity, 0.4)
+   
+Hull.

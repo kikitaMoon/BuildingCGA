@@ -1,0 +1,40 @@
+/**
+ * File:    3-ImportEsriLib_Facade_Roof.cga
+ * Created: 13 May 2015 07:06:15 GMT
+ * Author:  kikita
+ */
+
+version "2015.0"
+
+import Facade_Schematic:"/ESRI.lib/rules/Facades/Facade_Schematic.cga"
+import Facade_Textures:"/ESRI.lib/rules/Facades/Facade_Textures.cga"
+import Roof_Textures:"/ESRI.lib/rules/Roofs/Roof_Textures.cga"
+
+
+
+attr height = 100
+
+@StartRule
+Lot -->
+  extrude(height) Mass
+
+Mass -->
+  comp(f){ top:Roof | side:Facade}
+
+Roof -->
+  setupProjection(0, scope.xy, '1, '1)
+  projectUV(0)  
+  Roof_Textures.Generate
+
+Facade -->
+  
+  #setupProjection(0, scope.xy, '1, '1)
+  #projectUV(0)   
+  
+  #Facade_Textures.Generate
+  
+  Facade_Schematic.Generate
+
+  
+
+

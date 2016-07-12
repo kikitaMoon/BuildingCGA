@@ -1,0 +1,34 @@
+/**
+ * File:    3DCIM_Plants.cga
+ * Created: 26 Feb 2014 19:34:30 GMT
+ * Author:  Pascal
+ */
+
+version "2014.0"
+
+import PlantLoader:"/ESRI.lib/rules/Plants/Plant_Loader.cga"
+
+
+@Order(1) @Range("Analytical","Model","Fan")
+attr Representation		= "Analytical"
+@Order(2) @Range("Meters", "Feet")
+attr Units = "Feet"
+attr type				= "Citrus"
+attr subtype			= "Sinensis"
+attr height 			= 0
+attr diameter 			= 0
+
+@StartRule
+Plant -->
+	case Units == "Feet":
+	set(PlantLoader.Name, PlantLoader.getCommonName(type,subtype))
+	set(PlantLoader.Height,case height>0: height*.3048 else: PlantLoader.getStandardHeight)
+	set(PlantLoader.Radius,case diameter>0: diameter/2*.3048 else: PlantLoader.getRadius)
+	PlantLoader.Generate
+	else: 
+	set(PlantLoader.Name, PlantLoader.getCommonName(type,subtype))
+	set(PlantLoader.Height,case height>0: height else: PlantLoader.getStandardHeight)
+	set(PlantLoader.Radius,case diameter>0: diameter/2 else: PlantLoader.getRadius)
+	PlantLoader.Generate
+	
+	
