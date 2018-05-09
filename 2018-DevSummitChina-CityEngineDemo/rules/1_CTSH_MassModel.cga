@@ -1,0 +1,47 @@
+/**
+ * File:    BuildingMassforFacade.cga
+ * Created: 5 May 2018 10:24:01 GMT
+ * Author:  kikita
+ */
+
+version "2017.1"
+
+import Building_Facade:"rules/1_CTSH_Facade.cga"
+
+@Range(20,300)
+attr buildingHeight = 120
+
+Lot -->
+    split(x){'0.3 : FrontLot | '0.03 : Gap |'0.3 : MidLot | '0.07 : Gap |'0.3 : BackLot}
+    
+FrontLot -->
+	extrude(0.95*buildingHeight)
+	s('1,'1,'1.02)
+	comp(f) { top: Top | front: OuterFacade | side: Wall }
+
+	
+MidLot -->
+	extrude(buildingHeight)
+	s('1,'1,'1.05)
+	center(xz)
+	comp(f) { top: Top2 | front: OuterFacade | side: Wall }
+
+
+BackLot -->
+	extrude(0.85*buildingHeight)
+	comp(f) { top: Top2 | back: OuterFacade | side: Wall }
+
+Gap -->
+    extrude(0.90*buildingHeight)
+    s('1,'1,'0.95)
+	center(xz)
+
+Top  --> roofShed(40, 3) Roof
+Top2  --> roofShed(40, 1) Roof
+
+OuterFacade -->
+	Building_Facade.Facade
+
+
+	
+	 

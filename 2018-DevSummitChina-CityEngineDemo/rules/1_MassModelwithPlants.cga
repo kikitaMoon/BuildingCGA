@@ -1,0 +1,44 @@
+/**
+ * File:    BuildingMassforFacade.cga
+ * Created: 5 May 2018 10:24:01 GMT
+ * Author:  kikita
+ */
+
+version "2017.1"
+
+
+import Plant_Distributor:"/ESRI.lib/rules/Plants/Plant_Distributor.cga"
+import Building_Facade:"rules/gen_Facade_complex_facade.cga"
+import Building_Facade_Detail:"rules/gen_Facade_complex_facade_detail.cga"
+
+@Range(20,200)
+attr height = 30
+attr distanceStreet = 15
+
+# Parcel
+@StartRule	
+Lot --> Parcel
+Parcel --> 
+	setback(distanceStreet)
+		{ streetSide: OpenSpace 
+		| remainder: SubParcel }
+SubParcel -->
+    innerRectangle(scope)
+    	{shape: Footprint 
+    	| remainder:OpenSpace}
+Footprint -->
+	extrude(height) Mass 
+						 
+Mass --> 
+	comp(f){ side: Facade | top: Roof}	
+
+Facade --> 
+	Building_Facade.Facade	
+
+Roof -->
+    setupProjection(0, scope.xy, '1, '1)
+	texture("roofTexture.jpg")
+	projectUV(0)
+		
+OpenSpace -->	
+	Plant_Distributor.Generate				

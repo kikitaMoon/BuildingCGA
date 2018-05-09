@@ -1,0 +1,124 @@
+/**
+ * File:    0_3_MassModelingLargeArea.cga
+ * Created: 6 May 2018 03:11:48 GMT
+ * Author:  kikita
+ */
+
+version "2017.1"
+
+
+########################################################################
+## Attributes ##
+################
+
+
+@Group("Building",2) @Range(20,200)
+attr height = 
+			case geometry.area > 1000: rand(50,200) 
+			else: rand(20,50)
+	
+@Group("Footprint",1)  @Range(3,6)
+attr distanceStreet = 
+	20% : 0
+	else : rand(3,6)
+
+@Group("Footprint")  @Range(4,8)
+attr distanceBuildings = 
+	50% : 0
+	else : rand(4,8)
+
+const randomFacadeTexture = fileRandom("*facade_textures/f*.tif")
+
+@Group("Facade",3)  @Range(3,6)
+attr floorheight = rand(4,5)
+
+
+actualFloorHeight =  
+	case scope.sy >= 1 : scope.sy/rint(scope.sy/floorheight)
+	else : scope.sy
+	
+actualTileWidth = 
+	case scope.sx >= 2 : scope.sx/rint(scope.sx/4)
+	else : scope.sx
+	
+
+
+#########################################################################
+## Parcels ##
+#############
+
+# Parcel
+@StartRule	
+Lot --> Parcel
+
+#@StartRule	
+Parcel --> 
+	setback(distanceStreet)
+		{ streetSide: OpenSpace 
+		| remainder: SubParcel }
+
+SubParcel -->
+	setback(distanceBuildings/2)
+		{ noStreetSide: OpenSpace 
+		| remainder: Footprint }		
+
+import lushapes : "0_1_LUShape.cga"
+import towers : "0_2_Towers.cga"
+
+Footprint -->
+	case geometry.isRectangular(15):
+		15% : towers.Tower
+		else : lushapes.LUShape
+	else:
+		15%: towers.Tower
+		else : offset(-5,inside) lushapes.BasicFootprint
+#        else : innerRectangle(scope) { 
+#						shape : lushapes.BasicFootprint 
+#						| remainder : OpenSpace }
+
+# Openspace
+#@StartRule	
+LotInner --> OpenSpace
+
+#####  Demo: Import Esri Lib
+# import Plant_Distributor:"/ESRI.lib/rules/Plants/Plant_Distributor.cga"
+
+#@StartRule	
+OpenSpace -->
+	color("#77ff77")
+	
+#	Plant_Distributor.Generate			
+
+
+
+	
+###########################################################################
+## facades ##
+#############
+
+towers.Mass --> Mass
+lushapes.Mass --> Mass
+
+@Group("Facade") 
+attr textured = true
+@Group("Facade") @Color
+attr massColor = "#ffffff"
+	
+Mass --> 
+	case textured : color(massColor) comp(f){ side: Facade | top: Roof. }
+	else : color(massColor) Mass.
+		
+Facade -->
+	setupProjection(0, scope.xy, 8*actualTileWidth, 8*actualFloorHeight)
+	texture(randomFacadeTexture)
+	projectUV(0)	
+
+#import Facade_Schematic:"/ESRI.lib/rules/Facades/Facade_Schematic.cga"
+#import Facade_Textures:"/ESRI.lib/rules/Facades/Facade_Textures.cga"
+#Facade -->
+#	Facade_Schematic.Generate
+#	Facade_Textures.Generate
+	
+	
+	
+		

@@ -1,0 +1,28 @@
+/**
+ * File:    BuildingMassforFacade.cga
+ * Created: 5 May 2018 10:24:01 GMT
+ * Author:  kikita
+ */
+
+version "2017.1"
+
+import Building_Facade:"rules/gen_Facade_complex_facade.cga"
+import Building_Facade_Detail:"rules/gen_Facade_complex_facade_detail.cga"
+
+@Range(20,300)
+attr buildingHeight = 25
+
+Lot-->
+	extrude(buildingHeight) 
+	# comp(f) { side : Building_Facade.Facade }
+	comp(f) { side : Building_Facade_Detail.Facade }
+
+
+
+
+
+
+
+
+	
+	 
