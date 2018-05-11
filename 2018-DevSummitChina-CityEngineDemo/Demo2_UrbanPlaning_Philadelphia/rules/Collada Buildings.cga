@@ -1,0 +1,216 @@
+/**
+ * File:    Collada Buildings.cga
+ * Created: 20 Mar 2011 16:42:13 GMT
+ */
+
+version "2017.0"
+
+
+##############################################
+# Attributes
+#
+
+# Driven by Object Attributes
+
+@Group("ATTRS",1)
+
+@Order(1)
+attr OBJECT__ID = 0
+
+@Order(2)
+attr Z_Min = 0
+
+@Order(3)
+attr Z_Max = 0
+
+@Order(4) @Description("CityEngine interprets the inner polygons of donut geometries as hole i.e. the attribute is needed to drive the rules")
+attr isHole = false
+
+# User Attributes
+
+@Group("OPTIONS",2)
+
+@Order(1)
+attr MODEL_FILE = "data/kml/Buildings_subset_" + OBJECT__ID + ".dae"
+
+@Order(2) @Range("Meters","Feet")
+attr SIZE_UNIT = "Feet"
+
+@Order(3)
+attr TRANSPARENT = false
+
+@Order(4)
+attr CLEANUP_GEOMETRY = false
+
+@Order(5) @Range("None","On Sides", "All") @Description("Turn on to split the whole model into rectangular panels (usable e.g. for analysis)")
+attr PANELS_CREATE = "None"
+
+@Order(5) @Range(1,20) @Description("Note that panel size is adjusted/rounded to the geometry's dimensions on the side")
+attr PANEL_SIZE = 5
+
+@Order(6) @Range(0,3) @Description("Distance of the sampling point in front of the panel's center.")
+attr PANEL_SAMPLING_POINT_OFFSET = 0.1
+
+# For Reporting
+
+@Group("REPORTS",3)
+
+@Order(1) @Description("Report GFA, number of apartments, number of jobs")
+attr REPORT_INFO = false
+
+@Order(2) @Range("Residential","Office","Retail")
+attr USAGE = "Residential"
+
+@Order(3)
+attr BASE_FLOOR_HEIGHT = 0
+
+@Order(4)
+attr GROUND_FLOOR_HEIGHT = FLOOR_HEIGHT
+
+@Order(5)
+attr FLOOR_HEIGHT = 3
+
+@Order(6) @Description("Cut-off height of model for habitable floor calculation")
+attr REPORTING_HEIGHT = modelHeight*unitScale
+
+@Order(7) @Description("Visualize model for floor calculation")
+attr VIS_FLOOR_PLATES = false
+
+
+
+##############################################
+# Constants
+#
+
+const unitScale 	= case SIZE_UNIT=="Feet": 0.3048006096012192 else: 1
+const opacity 		= case TRANSPARENT: 0.45 else: 1
+const modelHeight 	= Z_Max - Z_Min
+
+const avgAptSize = 76.6
+const spacePerEmployee_office = 23.2
+const spacePerEmployee_retail = 46.5
+
+
+##############################################
+# Functions (needed for reporting semantic attributes in the panels)
+#
+
+getWorldDir = 
+	case geometry.isOriented(world.north)	: "north"
+	case geometry.isOriented(world.south)	: "south"
+	case geometry.isOriented(world.west)	: "west"
+	case geometry.isOriented(world.east)	: "east"
+	case geometry.isOriented(world.up)		: "up"
+	else									: "down"
+getLocalDir = 
+	case geometry.isOriented(object.front)	: "front"
+	case geometry.isOriented(object.back)	: "rear"
+	case geometry.isOriented(object.left)	: "left"
+	case geometry.isOriented(object.right)	: "right"
+	case geometry.isOriented(object.top)	: "top"
+	else									: "bottom"	
+
+
+
+##############################################
+# Rules
+#
+
+@StartRule
+Footprint --> 
+	case isHole: X. else:
+	alignScopeToAxes()							# the models are oriented relative to xyz-space
+	Reports
+	s('1,modelHeight*unitScale,'1)				# set the dimensions (no change in horizontal directions)
+	t(0,Z_Min*unitScale - scope.elevation,0)	# adjust the elevation to the given one
+	i(MODEL_FILE)								# insert the model
+	set(material.opacity,opacity)				# in case the user wants to have them transparent...	
+	Model
+	
+	
+# Cleanup
+Model -->
+	case CLEANUP_GEOMETRY || PANELS_CREATE != "None":
+		cleanupGeometry(all,1)
+		PanelizeMass
+	else:
+		PanelizeMass
+
+# Panels
+PanelizeMass -->
+	case PANELS_CREATE == "All":
+		comp(f){ aslant: Panels | world.side: Panels | all: Panels }
+	case PANELS_CREATE == "On Sides":
+		comp(f){ world.side	: Panels | all = ModelRemainder }
+	else:
+		case VIS_FLOOR_PLATES:
+			NIL
+		else:
+			Model.
+
+Panels -->	
+	alignScopeToGeometry(zUp,0,world.lowest)
+	split(x,noAdjust){ ~PANEL_SIZE: split(y){ ~PANEL_SIZE: Panel }* }*			# THE split
+
+Panel -->
+	case geometry.area() < 0.02:
+		NIL
+	else:
+		alignScopeToGeometry(zUp,0,world.lowest)
+		texture("") # switching off texture
+		report("ID",uid) 					
+		report("Type","Panel") report("Area",geometry.area)
+		report("Local Orientation",getLocalDir) report("World Orientation",getWorldDir) 
+		report("Azimuth Angle",geometry.angle(azimuth)) report("Zenith Angle",geometry.angle(zenith))
+		Panel.
+		[ s(0,0,0) center(xyz) t(0,0,PANEL_SAMPLING_POINT_OFFSET) 
+		  comp(v){ 0: report("Z",scope.elevation) SamplingPoint. } ]
+
+ModelRemainder -->	
+	report("Type","ModelRemainder")	
+
+# Reports
+Reports -->
+	case REPORT_INFO:
+		report("Footprint Area (m2)",geometry.area)
+		t(0,Z_Min*unitScale - scope.elevation,0)	# adjust the elevation to the given one
+		extrude(REPORTING_HEIGHT)
+		Vis_Mass
+		split(y) { BASE_FLOOR_HEIGHT: Reports_Floor Vis_Floor
+				 | GROUND_FLOOR_HEIGHT: Reports_Floor Vis_Floor
+				 | { FLOOR_HEIGHT: Reports_Floor Vis_Floor }* }
+	else:
+		NIL
+	
+Reports_Floor -->
+	case USAGE=="Residential":
+		report("GFA." + USAGE, geometry.area(bottom))
+		report("NumApartments", rint(geometry.area(bottom)/avgAptSize))
+		NIL
+	case USAGE=="Office":
+		report("GFA." + USAGE, geometry.area(bottom))
+		report("NumJobs." + USAGE, rint(geometry.area(bottom)/spacePerEmployee_office))
+		NIL
+	case USAGE=="Retail":
+		report("GFA." + USAGE, geometry.area(bottom))
+		report("NumJobs." + USAGE, rint(geometry.area(bottom)/spacePerEmployee_retail))
+		NIL
+	else:
+		report("GFA." + USAGE, geometry.area(bottom))
+		NIL
+		
+Vis_Mass -->
+	case VIS_FLOOR_PLATES:
+		color(1,1,1,0.5) Mass.
+	else:
+		NIL
+
+Vis_Floor -->
+	case VIS_FLOOR_PLATES:
+		comp(f) { bottom: FloorBottom. }
+	else:
+		NIL
+		
+
+		
+	

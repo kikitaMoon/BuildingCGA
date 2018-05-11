@@ -1,0 +1,392 @@
+/**
+ * File:    Generic Modern Buildings.cga
+ * Created: 24 Mar 2011 16:05:59 GMT
+ * Author:  Pascal
+ */
+
+version "2017.0"
+
+
+import Generic_Modern_Facades: "Generic Modern Buildings/Generic Modern Facades.cga"
+import Green_Space : "Generic Modern Buildings/Parcel Green Space.cga"
+
+
+################################################################
+## ATTRIBUTES
+##
+
+## Building Height ################################
+
+@Group("Building Height",1) 
+
+@Order(1) @Range(2,80)
+@Handle(shape=Envelope)
+attr Nbr_of_Floors = 40
+
+@Order(2) @Range("None","Increasing","Decreasing","Alternating","Random")
+attr Height_Variation__Mode = "None"
+
+@Order(3) @Range(2,20)
+attr Height_Variation__Min_Floors = 5
+
+@Order(4) @Range(3,5) @Description("Floor-to-floor height (residential buildings are normally constructed with a floor-to-floor height of about 3m, office buildings up to 4m)")
+attr Standard_Floor_Height = 3.8
+
+@Order(5) @Range(3,7)
+attr Ground_Floor_Height = 4.6
+
+## Locally Editable ################################
+
+@Group("Program",0)
+
+@Order(1) @Range("Residential","Office","Retail")
+@Handle(shape=FloorMass^2, type=selector, repeat=none, occlusion=false)
+attr Usage = "Residential"
+
+@Order(2) @Range("Color By Usage", "Generate Facade", "Use Mass Color")
+@Handle(shape=Parcel, type=selector, occlusion=false, color="#54a4e9")
+attr Mode = "Color By Usage"
+
+@Order(3) @Color
+attr Mass_Color = "#ffffff"
+
+
+## Building Setbacks ################################
+
+@Group("Building Setbacks",3) @Order(1) @Range(0,20)
+attr Setback_from_Street = 5
+
+@Order(2) @Range(0,10)
+attr Setback_from_Boundary = 3
+
+@Order(3) @Range("None","2 Stepbacks","2nd Floor","Top Floor","Increasing","Decreasing","Alternating","Random")
+attr Front_Setback_Mode = "None"
+
+@Order(4) @Range(0,10)
+attr Front_Setback_Distance = 2
+
+## Footprint Layout ################################
+
+@Group("Footprint Layout",4) @Order(1) @Range("Along Street","Along Front","L-Shape Left","L-Shape Right","U-Shape","Total Area")
+attr Layout_Shape = "Along Street"
+
+@Order(2) @Range("Open To Back","Open To Front")
+attr Layout_Orientation = "Open To Back"
+
+@Order(3) @Range(7,20)
+attr Wing_Width = 13
+
+## Footprint Partition ################################
+
+@Group("Footprint Partition",5) @Order(1) @Range(10,50)
+attr Unit_Width = 15
+
+@Order(2) @Range("None","Increasing","Decreasing","Alternating","Random")
+attr Offset_Mode = "None"
+
+@Order(3) @Range(0,10)
+attr Offset_Distance = 5
+
+
+## Hidden Attributes used for Reporting ########################
+
+@Hidden
+attr Lot_Area = geometry.area
+@Hidden
+attr Elevation = scope.elevation
+
+
+
+################################################################
+## FUNCTIONS
+##
+
+offsetDistance = case Offset_Mode == "None": 0 else: Offset_Distance
+mainWingWidth = 
+	case Front_Setback_Mode == "None": Wing_Width + offsetDistance
+	else:     Wing_Width + Front_Setback_Distance + offsetDistance
+	
+getHeight(nFloors) = Ground_Floor_Height + (nFloors-1)*Standard_Floor_Height
+
+
+nFloors(idx,n,h) = 	
+	case Height_Variation__Mode == "None" || n < 2 : h
+	case Height_Variation__Mode == "Increasing"    : Height_Variation__Min_Floors + rint((h-Height_Variation__Min_Floors)*idx/(n-1))
+	case Height_Variation__Mode == "Decreasing"    : Height_Variation__Min_Floors + rint((h-Height_Variation__Min_Floors)*(1-idx/(n-1)))
+	case Height_Variation__Mode == "Alternating"   : Height_Variation__Min_Floors + rint((h-Height_Variation__Min_Floors)*(idx%2))
+	else                                   : rint(rand(Height_Variation__Min_Floors-0.49,h+0.49))
+
+
+
+getFloorHeight(idx) = case idx == 0: Ground_Floor_Height else: Standard_Floor_Height
+
+getColorByUsage(usage) =
+	case usage=="Residential": 		"#b0d5ff"
+	case usage=="Office":			"#80d5cf"
+	case usage=="Retail":			"#80b5ff"
+	else:							Mass_Color
+	
+const avgAptSize = 76.6
+const spacePerEmployee_office = 23.2
+const spacePerEmployee_retail = 46.5
+
+
+
+################################################################
+## RULES
+##
+
+
+## Parcel to Footprint ################################
+
+Lot --> Parcel
+
+@StartRule
+Parcel -->
+	alignScopeToAxes(y) 
+	set(Lot_Area,geometry.area) set(Elevation,scope.elevation)	# save the original setting
+	report("Lot Area (m2)",Lot_Area)
+	setback(Setback_from_Street){ streetSide: GreenSpace("street") 
+							    | remainder : setback(Setback_from_Boundary){ noStreetSide: GreenSpace("border") | remainder : ConstructionArea } }
+	
+ConstructionArea -->
+	case Layout_Shape == "Along Street":
+		case Layout_Orientation == "Open To Back":
+			setback(mainWingWidth) { streetSide : Layout | remainder : GreenSpace }
+		else:
+			setback(mainWingWidth) { noStreetSide : Layout | remainder : GreenSpace }
+	case Layout_Shape == "Along Front":
+		case Layout_Orientation == "Open To Back":
+			setback(mainWingWidth) { front : Layout | remainder : GreenSpace }
+		else:
+			setback(mainWingWidth) { back : Layout | remainder : GreenSpace }
+	case Layout_Shape == "L-Shape Left":
+		case Layout_Orientation == "Open To Back":
+			shapeO(mainWingWidth,0,0,Wing_Width) { shape : Layout | remainder : GreenSpace } 
+		else:
+			shapeO(0,0,mainWingWidth,Wing_Width) { shape : Layout | remainder : GreenSpace } 
+	case Layout_Shape == "L-Shape Right":
+		case Layout_Orientation == "Open To Back":
+			shapeO(mainWingWidth,Wing_Width,0,0) { shape : Layout | remainder : GreenSpace } 
+		else:
+			shapeO(0,Wing_Width,mainWingWidth,0) { shape : Layout | remainder : GreenSpace } 
+	case Layout_Shape == "U-Shape":
+		case Layout_Orientation == "Open To Back":
+			shapeO(mainWingWidth,Wing_Width,0,Wing_Width) { shape : Layout | remainder : GreenSpace } 
+		else:
+			shapeO(0,Wing_Width,mainWingWidth,Wing_Width) { shape : Layout | remainder : GreenSpace } 
+	else:
+		Layout
+
+Layout --> 
+		split(x){ ~Unit_Width: Unit(split.index,split.total) }* 
+	
+Unit(idx,n) -->
+	case n < 2 || offsetDistance <= 0:
+		FootprintCheck(idx,n)
+	case Offset_Mode == "Increasing":
+		split(z){ offsetDistance*(1-idx/(n-1)) : GreenSpace("building") | ~1: FootprintCheck(idx,n) | offsetDistance*idx/(n-1) : GreenSpace("building") }
+	case Offset_Mode == "Decreasing":
+		split(z){ offsetDistance*idx/(n-1) : GreenSpace("building") | ~1: FootprintCheck(idx,n) | offsetDistance*(1-idx/(n-1)) : GreenSpace("building") }
+	case Offset_Mode == "Alternating":
+		split(z){ offsetDistance*(idx%2) : GreenSpace("building") | ~1: FootprintCheck(idx,n) | offsetDistance*((idx+1)%2) : GreenSpace("building") }
+	case Offset_Mode == "Random":
+		40% : split(z){                                            ~1: FootprintCheck(idx,n) | offsetDistance  : GreenSpace("building") }
+		10% : split(z){ offsetDistance/2: GreenSpace("building") | ~1: FootprintCheck(idx,n) | offsetDistance/2: GreenSpace("building") }
+		40% : split(z){ offsetDistance  : GreenSpace("building") | ~1: FootprintCheck(idx,n) }
+		else: FootprintCheck(idx,n)
+	else:
+		FootprintCheck(idx,n)
+
+FootprintCheck(idx,n) -->
+	case geometry.isConcave:
+		convexify(3) FootprintSizeCheck(idx,n) 
+	else:
+		FootprintSizeCheck(idx,n)
+
+FootprintSizeCheck(idx,n) -->
+	case geometry.nFaces > 1:
+		comp(f){all: alignScopeToAxes(y) FootprintSizeCheck(idx,n) }
+	case scope.sx < 4 || scope.sz < 4:
+		GreenSpace
+	else:
+		Footprint(idx,n)
+
+
+## Footprint to Mass ################################
+
+@StartRule
+Footprint -->
+	Footprint(0,1) # default case
+
+Footprint(idx,n) -->
+	alignScopeToAxes(y) s('1,0,'1) t(0,Elevation-scope.elevation,0)
+	report("Footprint Area (m2)",geometry.area)
+	report("Lot Coverage (%)",geometry.area/Lot_Area*100)
+	set(Nbr_of_Floors, nFloors(idx,n,Nbr_of_Floors))
+	extrude(getHeight(Nbr_of_Floors))
+	Envelope 
+	
+Envelope -->
+	split(y){   ~Ground_Floor_Height: FloorEnvelope(split.index,split.total) 
+			| { ~Standard_Floor_Height: FloorEnvelope(split.index,split.total) }* }
+
+FloorEnvelope(idx,n) -->
+	s('1,0.02,'1) t(0,'-1,0) comp(f){top: FloorArea(idx,n) }
+
+FloorArea(idx,n) -->
+	case Front_Setback_Mode == "None":
+		Floor(idx,n)
+	case Front_Setback_Mode == "2nd Floor" && idx > 1:
+		setback(Front_Setback_Distance){ object.front: NIL | remainder: Floor(idx,n) }		
+	case Front_Setback_Mode == "Top Floor" && idx == n-1:
+		setback(Front_Setback_Distance){ object.front: NIL | remainder: Floor(idx,n) }		
+	case Front_Setback_Mode == "2 Stepbacks" && idx > n*0.8:
+		setback(Front_Setback_Distance){ object.front: NIL | remainder: Floor(idx,n) }		
+	case Front_Setback_Mode == "2 Stepbacks" && idx > n*0.5:
+		setback(Front_Setback_Distance/2){ object.front: NIL | remainder: Floor(idx,n) }		
+	case Front_Setback_Mode == "Increasing":
+		setback(Front_Setback_Distance*idx/(n-1)){ object.front: NIL | remainder: Floor(idx,n) }		
+	case Front_Setback_Mode == "Decreasing":
+		setback(Front_Setback_Distance*(1-idx/(n-1))){ object.front: NIL | remainder: Floor(idx,n) }		
+	case Front_Setback_Mode == "Alternating" && idx%2 == 1:
+		setback(Front_Setback_Distance){ object.front: NIL | remainder: Floor(idx,n) }		
+	case Front_Setback_Mode == "Random":
+		30% : setback(Front_Setback_Distance){ object.front: NIL | remainder: Floor(idx,n) }
+		30% : setback(Front_Setback_Distance){ object.back: NIL | remainder: Floor(idx,n) }
+		else: Floor(idx,n)
+	else:
+		Floor(idx,n)
+		
+Floor(idx,n) --> 
+	case idx < 2:
+		set(Usage,"Retail")
+		Reports_UsageColors
+		Reports_Floor
+		extrude(getFloorHeight(idx)) FloorMass(idx,n)
+	else:
+		Reports_UsageColors
+		Reports_Floor
+		extrude(getFloorHeight(idx)) FloorMass(idx,n)
+
+Reports_Floor -->
+	case Usage=="Residential":
+		report("GFA." + Usage, geometry.area)
+		report("FAR." + Usage, geometry.area/Lot_Area)
+		report("Usage", Usage)
+		report("NumApartments", rint(geometry.area/avgAptSize))
+		NIL
+	case Usage=="Office":
+		report("GFA." + Usage, geometry.area)
+		report("FAR." + Usage, geometry.area/Lot_Area)
+		report("Usage", Usage)
+		report("NumJobs." + Usage, rint(geometry.area/spacePerEmployee_office))
+		NIL
+	case Usage=="Retail":
+		report("GFA." + Usage, geometry.area)
+		report("FAR." + Usage, geometry.area/Lot_Area)
+		report("Usage", Usage)
+		report("NumJobs." + Usage, rint(geometry.area/spacePerEmployee_retail))
+		NIL
+	else:
+		report("GFA." + Usage, geometry.area)
+		report("FAR." + Usage, geometry.area/Lot_Area)
+		report("Usage", Usage)
+		NIL
+
+Reports_UsageColors -->
+	case Mode=="Color By Usage":
+		report("GFA." + Usage + "#color", getColorByUsage(Usage))
+		NIL
+	else:
+		NIL
+		
+FloorMass(idx,n) -->
+	case Mode=="Color By Usage":
+		color(getColorByUsage(Usage))
+		set(Generic_Modern_Facades.Generate_Facade, false)
+		Generic_Modern_Facades.FloorMass(idx,n)
+	case Mode=="Generate Facade":
+		color(Mass_Color)
+		set(Generic_Modern_Facades.Generate_Facade, true)
+		Generic_Modern_Facades.FloorMass(idx,n)
+	else:
+		color(Mass_Color)
+		set(Generic_Modern_Facades.Generate_Facade, false)
+		Generic_Modern_Facades.FloorMass(idx,n)
+	
+	
+## Subpart Generation ################################
+	
+GreenSpace -->
+	GreenSpace("main")
+
+GreenSpace(id) -->
+	report("Open Space Area (m2)",geometry.area)
+	Green_Space.GreenSpace(id)
+
+
+		
+### PRE-CONFIGURED STYLES ################################
+#
+#style LShaped
+#attr Height_Variation__Min_Floors = 7.0
+#attr Nbr_of_Floors = 9.0
+#attr Height_Variation__Mode = "Increasing"
+#attr Setback_from_Street = 2.0
+#attr Front_Setback_Distance = 3.0
+#attr Layout_Shape = "L-Shape Left"
+#attr Wing_Width = 20.0
+#attr Unit_Width = 30.0
+#attr Offset_Mode = "Decreasing"
+#attr Offset_Distance = 3.0
+#
+#style Shifted
+#attr Height_Variation__Min_Floors = 7.0
+#attr Setback_from_Street = 2.0
+#attr Front_Setback_Mode = "Top Floor"
+#attr Front_Setback_Distance = 3.0
+#attr Wing_Width = 20.0
+#attr Unit_Width = 20.0
+#attr Offset_Mode = "Increasing"
+#attr Offset_Distance = 9.0
+#
+#style Terrasse
+#attr Layout_Shape = "L-Shape Left"			
+#attr Wing_Width = 25
+#attr Unit_Width = 30
+#attr Offset_Mode = "Random"
+#attr Offset_Distance = 5
+#attr Front_Setback_Mode = "Increasing"
+#attr Front_Setback_Distance = 10
+#
+#style Lego
+#attr Height_Variation__Min_Floors = 5.0
+#attr Nbr_of_Floors = 7.0
+#attr Height_Variation__Mode = "Random"
+#attr Setback_from_Street = 2.0
+#attr Front_Setback_Mode = "Random"
+#attr Front_Setback_Distance = 3.0
+#attr Layout_Shape = "Along Front"
+#attr Wing_Width = 20.0
+#attr Offset_Mode = "Random"
+#attr Offset_Distance = 3.0
+#
+#style HighRise
+#attr Height_Variation__Min_Floors = 9.0
+#attr Nbr_of_Floors = 41.0
+#attr Height_Variation__Mode = "Decreasing"
+#attr Setback_from_Street = 2.0
+#attr Front_Setback_Mode = "2 Stepbacks"
+#attr Front_Setback_Distance = 6.0
+#attr Layout_Shape = "L-Shape Left"
+#attr Wing_Width = 16.0
+#attr Unit_Width = 23.0
+#attr Offset_Mode = "Random"
+#attr Offset_Distance = 3.0
+
+
+
+
+
+

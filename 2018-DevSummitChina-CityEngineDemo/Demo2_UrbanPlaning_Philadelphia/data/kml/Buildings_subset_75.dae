@@ -1,0 +1,3880 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+	<asset>
+		<created>2011-08-26T00:21:07Z</created>
+		<modified>2011-08-26T00:21:07Z</modified>
+		<up_axis>Z_UP</up_axis>
+	</asset>
+	<library_geometries>
+		<geometry id="Buildings_subset_75.dae0">
+			<mesh>
+				<source id="Buildings_subset_75.dae0-positions">
+					<float_array id="Buildings_subset_75.dae0-positions-array" count="276">37.8125 100.987 76.317 -37.1396 -102.268 76.3248 -7.47326 107.394 76.3082 8.14419 -108.672 76.3336 -56.8906 -123.578 65.9991 -20.6114 134.098 65.9787 21.0113 -134.541 66.0143 57.2902 123.135 65.9939 29.6688 -146.974 59.9531 -68.0504 -133.346 59.9341 -29.9621 146.183 59.9118 68.4382 132.54 59.9309 -68.0504 -133.346 60.7543 -69.1583 -134.185 60.7542 -30.8043 147.293 60.7317 -29.9624 146.183 60.732 30.5084 -148.085 60.7736 29.6688 -146.974 60.7734 68.4382 132.54 60.7511 69.5481 133.38 60.7512 71.2489 135.451 58.3136 -71.259 -135.468 58.3163 -31.9352 148.908 58.2936 31.2489 -148.902 58.3361 -18.3542 -11.0348 94.397 -19.362 -18.2877 94.3975 -30.1209 -16.8934 94.3955 -6.24787 3.83366 94.3976 -8.49557 -12.4865 94.3989 -26.9044 6.51378 94.3936 8.65961 -81.7999 92.9032 -6.09925 -79.0948 92.9003 9.60515 -81.0932 92.9033 -5.344 -80.0177 92.9005 -5.49623 -82.0994 92.9007 -6.25082 -81.1726 92.9005 -22.1885 -79.0686 92.8974 -21.4952 -79.9875 92.8976 -25.658 -102.544 92.8993 -24.7256 -101.844 92.8994 -8.36499 -104.1 92.9026 -7.67011 -105.024 92.9028 -6.2833 -89.7418 92.9014 -5.58711 -90.6572 92.9016 7.77707 -92.3593 92.9042 7.09432 -91.4455 92.904 -18.6281 -95.4347 92.1947 -9.50869 -87.353 92.1955 -10.6002 -96.4026 92.1963 -17.5356 -86.3855 92.194 9.74065 103.706 88.1251 9.06152 104.627 88.1249 31.2941 101.579 88.1292 30.3686 100.878 88.1291 8.43159 95.7913 88.1257 7.75148 96.7067 88.1254 -8.47228 98.815 88.1223 -7.77444 97.8973 88.1225 -13.9398 60.3461 88.1252 -13.0113 61.0502 88.1253 3.86827 58.8094 88.1286 4.57103 57.8888 88.1288 6.86827 80.9416 88.1269 7.57169 80.0226 88.1271 27.9332 77.3707 88.131 27.2328 78.289 88.1308 -7.78789 66.3642 83.9392 0.75771 73.5866 83.94 -0.183235 65.4856 83.9407 -6.85023 74.4649 83.9386 11.9857 88.3698 79.2612 9.08612 89.2917 78.3 15.596 88.3927 78.3012 -11.6258 -83.5577 79.2749 -14.7016 -82.8865 78.3137 -8.1898 -83.7854 78.3149 7.91355 80.8045 78.3006 9.08645 89.2913 76.313 7.91388 80.8045 76.3136 -14.43 -80.9216 76.3265 -14.4303 -80.9213 78.3135 -14.7013 -82.8868 76.3267 -7.91289 -81.7818 78.3148 -8.18947 -83.7854 76.3279 -7.91257 -81.7818 76.3278 14.4309 79.9557 76.3149 14.4306 79.9557 78.3019 15.5966 88.3927 76.3142 -37.7387 16.3556 66.1479 -51.2131 -10.7566 66.1483 -47.6931 17.5915 66.146 -41.2594 -11.9921 66.1502</float_array>
+					<technique_common>
+						<accessor count="92" source="#Buildings_subset_75.dae0-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae0-normals">
+					<float_array id="Buildings_subset_75.dae0-normals-array" count="33">0 0 1 -0.429688 0.0703125 0.851563 0 -0.296875 0.914063 0.53125 0 0.84375 0.0546875 0.382813 0.921875 0.117188 0.875 0.476563 -0.203125 0.0390625 0.953125 -0.0390625 -0.867188 -0.15625 0.265625 0 0.960938 -0.898438 0.140625 0 0.992188 -0.046875 0</float_array>
+					<technique_common>
+						<accessor count="11" source="#Buildings_subset_75.dae0-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae0-uv">
+					<float_array id="Buildings_subset_75.dae0-uv-array" count="224">0.313215 0.144964 0.0472146 0.378296 0.313396 0.37494 0.0470371 0.148334 0.393513 0.424212 0.363525 0.522461 0.690635 0.522461 0.659695 0.423589 0.542946 0.179019 0.563492 0.30957 0.4646 0.30957 0.485455 0.178874 0.393471 0.415039 0.690634 0.317826 0.363525 0.317826 0.65965 0.414408 0.442054 0.30957 0.363525 0.175203 0.462417 0.175203 0.38456 0.309412 0.00305143 0.0147585 0.00319465 0.510868 0.357825 0.513685 0.357781 0.0141717 0.00195882 0.515808 0.359063 0.518643 0.00181275 0.00981158 0.359017 0.0092206 0.361889 0.00217807 0 0.525391 0.360879 0.525391 0.000922617 0.00556332 0.164052 0.34755 0.154846 0.347574 0.15473 0.402122 0.18465 0.297491 0.163941 0.297445 0.184431 0.402224 0.0805857 0.16426 0.0814126 0.239633 0.0816282 0.160036 0.0803934 0.235237 0.0777751 0.234561 0.0787993 0.238959 0.0786748 0.319791 0.0776501 0.315705 0.0488459 0.320903 0.0498774 0.31674 0.0498859 0.233696 0.0488553 0.229599 0.0681232 0.233218 0.0671031 0.22912 0.0672851 0.161382 0.0683054 0.165412 0.0589089 0.290784 0.0705424 0.250929 0.059086 0.250133 0.0703652 0.291577 0.311766 0.286647 0.312796 0.290664 0.312829 0.177829 0.311797 0.181955 0.301685 0.287717 0.302708 0.291734 0.30254 0.373995 0.301517 0.369886 0.253697 0.374732 0.254733 0.370592 0.254849 0.284974 0.253824 0.280839 0.282925 0.285275 0.281902 0.28114 0.282106 0.177895 0.283129 0.182017 0.26225 0.34824 0.272715 0.31065 0.262465 0.309757 0.272498 0.349148 0.383408 0.59082 0.379639 0.585336 0.3879 0.585336 0.369385 0.599707 0.369695 0.616211 0.588189 0.615536 0.587537 0.599707 0.373331 0.585836 0.377648 0.59082 0.369385 0.59082 0.369385 0.642884 0.588187 0.62495 0.369693 0.62495 0.587537 0.643555 0.852539 0.679688 0.863309 0.669696 0.863309 0.679688 0.852539 0.669696 0.971244 0.693134 0.96875 0.703125 0.96875 0.693134 0.971244 0.703125 0.98205 0.693134 0.979508 0.703125 0.979508 0.693134 0.98205 0.703125 0.87157 0.679688 0.882277 0.669696 0.882277 0.679688 0.87157 0.669696 0.194823 0.462994 0.158743 0.511433 0.194648 0.513425 0.158918 0.461004</float_array>
+					<technique_common>
+						<accessor count="112" source="#Buildings_subset_75.dae0-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae0-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae0-positions"/>
+				</vertices>
+				<triangles count="78" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae0-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae0-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae0-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 1 0 1 3 0 3 0 0 0 4 1 5 1 1 4 5 1 6 1 1 4 2 1 7 5 1 6 6 2 9 3 2 8 4 2 10 3 2 8 1 2 11 4 2 10 7 3 13 3 3 12 6 3 14 7 3 13 0 3 15 3 3 12 5 4 17 0 4 16 7 4 18 5 4 17 2 4 19 0 4 16 9 0 21 8 0 20 10 0 22 8 0 20 11 0 23 10 0 22 13 0 24 12 0 21 14 0 25 12 0 21 15 0 22 14 0 25 16 0 26 12 0 21 13 0 24 16 0 26 17 0 20 12 0 21 19 0 27 18 0 23 16 0 26 18 0 23 17 0 20 16 0 26 14 0 25 18 0 23 19 0 27 14 0 25 15 0 22 18 0 23 21 0 29 20 0 28 22 0 30 21 0 29 23 0 31 20 0 28 25 0 33 24 0 32 26 0 34 28 0 36 27 0 35 24 0 32 29 0 37 26 0 34 27 0 35 26 0 34 24 0 32 27 0 35 31 0 39 30 0 38 32 0 40 31 0 39 33 0 41 30 0 38 35 0 43 34 0 42 31 0 39 34 0 42 33 0 41 31 0 39 36 0 44 34 0 42 35 0 43 36 0 44 37 0 45 34 0 42 38 0 46 37 0 45 36 0 44 38 0 46 39 0 47 37 0 45 41 0 49 40 0 48 38 0 46 40 0 48 39 0 47 38 0 46 43 0 51 42 0 50 41 0 49 42 0 50 40 0 48 41 0 49 44 0 52 42 0 50 43 0 51 44 0 52 45 0 53 42 0 50 32 0 40 45 0 53 44 0 52 32 0 40 30 0 38 45 0 53 47 0 55 46 0 54 48 0 56 47 0 55 49 0 57 46 0 54 51 0 59 50 0 58 52 0 60 50 0 58 53 0 61 52 0 60 55 0 63 54 0 62 51 0 59 54 0 62 50 0 58 51 0 59 56 0 64 54 0 62 55 0 63 56 0 64 57 0 65 54 0 62 58 0 66 57 0 65 56 0 64 58 0 66 59 0 67 57 0 65 61 0 69 60 0 68 58 0 66 60 0 68 59 0 67 58 0 66 63 0 71 62 0 70 61 0 69 62 0 70 60 0 68 61 0 69 64 0 72 62 0 70 63 0 71 64 0 72 65 0 73 62 0 70 52 0 60 65 0 73 64 0 72 52 0 60 53 0 61 65 0 73 67 0 75 66 0 74 68 0 76 67 0 75 69 0 77 66 0 74 71 5 79 70 5 78 72 5 80 74 6 82 73 6 81 71 6 83 73 6 81 70 6 84 71 6 83 75 7 86 73 7 85 74 7 87 72 8 89 73 8 88 75 8 90 72 8 89 70 8 91 73 8 88 77 9 93 76 9 92 71 9 94 77 9 93 78 9 95 76 9 92 79 9 97 74 9 96 80 9 98 79 9 97 81 9 99 74 9 96 83 10 101 82 10 100 75 10 102 83 10 101 84 10 103 82 10 100 85 10 105 72 10 104 86 10 106 85 10 105 87 10 107 72 10 104 89 0 109 88 0 108 90 0 110 89 0 109 91 0 111 88 0 108</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae75">
+			<mesh>
+				<source id="Buildings_subset_75.dae75-positions">
+					<float_array id="Buildings_subset_75.dae75-positions-array" count="12">57.2912 123.135 59.9298 -20.6114 134.098 65.9787 -20.6104 134.098 59.9146 57.2902 123.135 65.9939</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae75-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae75-normals">
+					<float_array id="Buildings_subset_75.dae75-normals-array" count="3">0.140625 0.992188 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae75-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae75-uv">
+					<float_array id="Buildings_subset_75.dae75-uv-array" count="8">0.524893 0.649196 0.426001 0.679688 0.426001 0.649196 0.524893 0.679688</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae75-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae75-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae75-positions"/>
+				</vertices>
+				<triangles count="2" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae75-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae75-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae75-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 0 0 0 1 0 1 3 0 3</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae76">
+			<mesh>
+				<source id="Buildings_subset_75.dae76-positions">
+					<float_array id="Buildings_subset_75.dae76-positions-array" count="12">-20.6104 134.098 59.9146 -56.8906 -123.578 65.9991 -56.8896 -123.579 59.935 -20.6114 134.098 65.9787</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae76-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae76-normals">
+					<float_array id="Buildings_subset_75.dae76-normals-array" count="3">-0.898438 0.140625 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae76-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae76-uv">
+					<float_array id="Buildings_subset_75.dae76-uv-array" count="8">0.426001 0.649196 0.0988922 0.679688 0.0988922 0.649196 0.426001 0.679688</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae76-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae76-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae76-positions"/>
+				</vertices>
+				<triangles count="2" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae76-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae76-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae76-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 0 0 0 1 0 1 3 0 3</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae77">
+			<mesh>
+				<source id="Buildings_subset_75.dae77-positions">
+					<float_array id="Buildings_subset_75.dae77-positions-array" count="12">-56.8906 -123.578 65.9991 21.0123 -134.542 59.9502 -56.8896 -123.579 59.935 21.0113 -134.541 66.0143</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae77-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae77-normals">
+					<float_array id="Buildings_subset_75.dae77-normals-array" count="3">-0.046875 -0.898438 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae77-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae77-uv">
+					<float_array id="Buildings_subset_75.dae77-uv-array" count="8">0.0988922 0.679688 0 0.649196 0.0988922 0.649196 0 0.679688</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae77-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae77-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae77-positions"/>
+				</vertices>
+				<triangles count="2" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae77-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae77-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae77-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 0 0 0 1 0 1 3 0 3</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae78">
+			<mesh>
+				<source id="Buildings_subset_75.dae78-positions">
+					<float_array id="Buildings_subset_75.dae78-positions-array" count="12">21.0113 -134.541 66.0143 57.2912 123.135 59.9298 21.0123 -134.542 59.9502 57.2902 123.135 65.9939</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae78-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae78-normals">
+					<float_array id="Buildings_subset_75.dae78-normals-array" count="3">0.992188 -0.046875 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae78-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae78-uv">
+					<float_array id="Buildings_subset_75.dae78-uv-array" count="8">0.852002 0.679688 0.524893 0.649196 0.852002 0.649196 0.524893 0.679688</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae78-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae78-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae78-positions"/>
+				</vertices>
+				<triangles count="2" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae78-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae78-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae78-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 0 0 0 1 0 1 3 0 3</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae79">
+			<mesh>
+				<source id="Buildings_subset_75.dae79-positions">
+					<float_array id="Buildings_subset_75.dae79-positions-array" count="12">-68.0504 -133.346 60.7543 -29.9621 146.183 59.9118 -68.0504 -133.346 59.9341 -29.9624 146.183 60.732</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae79-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae79-normals">
+					<float_array id="Buildings_subset_75.dae79-normals-array" count="3">0.992188 -0.0390625 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae79-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae79-uv">
+					<float_array id="Buildings_subset_75.dae79-uv-array" count="8">0.479509 0.683376 0.124878 0.6875 0.479509 0.6875 0.124878 0.683376</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae79-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae79-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae79-positions"/>
+				</vertices>
+				<triangles count="2" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae79-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae79-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae79-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 0 0 0 1 0 1 3 0 3</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae80">
+			<mesh>
+				<source id="Buildings_subset_75.dae80-positions">
+					<float_array id="Buildings_subset_75.dae80-positions-array" count="12">29.6688 -146.974 59.9531 -68.0504 -133.346 60.7543 -68.0504 -133.346 59.9341 29.6688 -146.974 60.7734</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae80-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae80-normals">
+					<float_array id="Buildings_subset_75.dae80-normals-array" count="3">0.140625 0.992188 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae80-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae80-uv">
+					<float_array id="Buildings_subset_75.dae80-uv-array" count="8">0.603537 0.6875 0.479509 0.683376 0.479509 0.6875 0.603537 0.683376</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae80-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae80-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae80-positions"/>
+				</vertices>
+				<triangles count="2" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae80-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae80-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae80-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 0 0 0 1 0 1 3 0 3</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae81">
+			<mesh>
+				<source id="Buildings_subset_75.dae81-positions">
+					<float_array id="Buildings_subset_75.dae81-positions-array" count="12">68.4382 132.54 59.9309 29.6688 -146.974 60.7734 29.6688 -146.974 59.9531 68.4382 132.54 60.7511</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae81-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae81-normals">
+					<float_array id="Buildings_subset_75.dae81-normals-array" count="3">-0.898438 0.140625 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae81-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae81-uv">
+					<float_array id="Buildings_subset_75.dae81-uv-array" count="8">0.958266 0.6875 0.603537 0.683376 0.603537 0.6875 0.958266 0.683376</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae81-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae81-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae81-positions"/>
+				</vertices>
+				<triangles count="2" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae81-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae81-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae81-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 0 0 0 1 0 1 3 0 3</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae82">
+			<mesh>
+				<source id="Buildings_subset_75.dae82-positions">
+					<float_array id="Buildings_subset_75.dae82-positions-array" count="12">-29.9624 146.183 60.732 68.4382 132.54 59.9309 -29.9621 146.183 59.9118 68.4382 132.54 60.7511</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae82-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae82-normals">
+					<float_array id="Buildings_subset_75.dae82-normals-array" count="3">-0.046875 -0.898438 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae82-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae82-uv">
+					<float_array id="Buildings_subset_75.dae82-uv-array" count="8">0.124878 0.683376 0 0.6875 0.124878 0.6875 0 0.683376</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae82-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae82-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae82-positions"/>
+				</vertices>
+				<triangles count="2" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae82-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae82-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae82-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 0 0 0 1 0 1 3 0 3</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae83">
+			<mesh>
+				<source id="Buildings_subset_75.dae83-positions">
+					<float_array id="Buildings_subset_75.dae83-positions-array" count="12">69.5487 133.38 58.3135 -30.8043 147.293 60.7317 -30.804 147.293 58.294 69.5481 133.38 60.7512</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae83-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae83-normals">
+					<float_array id="Buildings_subset_75.dae83-normals-array" count="3">0.140625 0.992188 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae83-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae83-uv">
+					<float_array id="Buildings_subset_75.dae83-uv-array" count="8">0.610959 0.690868 0.483604 0.703125 0.483604 0.690868 0.610959 0.703125</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae83-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae83-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae83-positions"/>
+				</vertices>
+				<triangles count="2" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae83-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae83-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae83-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 0 0 0 1 0 1 3 0 3</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae84">
+			<mesh>
+				<source id="Buildings_subset_75.dae84-positions">
+					<float_array id="Buildings_subset_75.dae84-positions-array" count="12">-30.804 147.293 58.294 -69.1583 -134.185 60.7542 -69.1576 -134.185 58.3165 -30.8043 147.293 60.7317</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae84-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae84-normals">
+					<float_array id="Buildings_subset_75.dae84-normals-array" count="3">-0.898438 0.132813 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae84-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae84-uv">
+					<float_array id="Buildings_subset_75.dae84-uv-array" count="8">0.483604 0.690868 0.126499 0.703125 0.126499 0.690868 0.483604 0.703125</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae84-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae84-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae84-positions"/>
+				</vertices>
+				<triangles count="2" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae84-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae84-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae84-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 0 0 0 1 0 1 3 0 3</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae85">
+			<mesh>
+				<source id="Buildings_subset_75.dae85-positions">
+					<float_array id="Buildings_subset_75.dae85-positions-array" count="12">-69.1583 -134.185 60.7542 30.5087 -148.085 58.3359 -69.1576 -134.185 58.3165 30.5084 -148.085 60.7736</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae85-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae85-normals">
+					<float_array id="Buildings_subset_75.dae85-normals-array" count="3">-0.046875 -0.898438 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae85-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae85-uv">
+					<float_array id="Buildings_subset_75.dae85-uv-array" count="8">0.126499 0.703125 0 0.690868 0.126499 0.690868 0 0.703125</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae85-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae85-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae85-positions"/>
+				</vertices>
+				<triangles count="2" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae85-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae85-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae85-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 0 0 0 1 0 1 3 0 3</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae86">
+			<mesh>
+				<source id="Buildings_subset_75.dae86-positions">
+					<float_array id="Buildings_subset_75.dae86-positions-array" count="12">69.5481 133.38 60.7512 30.5087 -148.085 58.3359 30.5084 -148.085 60.7736 69.5487 133.38 58.3135</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae86-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae86-normals">
+					<float_array id="Buildings_subset_75.dae86-normals-array" count="3">0.992188 -0.046875 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae86-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae86-uv">
+					<float_array id="Buildings_subset_75.dae86-uv-array" count="8">0.610959 0.703125 0.968164 0.690868 0.968164 0.703125 0.610959 0.690868</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae86-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae86-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae86-positions"/>
+				</vertices>
+				<triangles count="2" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae86-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae86-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae86-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 0 0 0 1 0 1 3 0 3</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae87">
+			<mesh>
+				<source id="Buildings_subset_75.dae87-positions">
+					<float_array id="Buildings_subset_75.dae87-positions-array" count="12">71.2489 135.451 58.3136 -31.9257 148.903 5.0455 71.259 135.446 3.928 -31.9352 148.908 58.2936</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae87-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae87-normals">
+					<float_array id="Buildings_subset_75.dae87-normals-array" count="3">0.132813 0.992188 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae87-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae87-uv">
+					<float_array id="Buildings_subset_75.dae87-uv-array" count="8">0.621647 1 0.490839 0.732257 0.621647 0.726538 0.490839 1</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae87-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae87-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae87-positions"/>
+				</vertices>
+				<triangles count="2" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae87-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae87-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae87-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 0 0 0 1 0 1 3 0 3</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae88">
+			<mesh>
+				<source id="Buildings_subset_75.dae88-positions">
+					<float_array id="Buildings_subset_75.dae88-positions-array" count="12">-31.9257 148.903 5.0455 -71.259 -135.468 58.3163 -71.2489 -135.474 1.1803 -31.9352 148.908 58.2936</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae88-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae88-normals">
+					<float_array id="Buildings_subset_75.dae88-normals-array" count="3">-0.898438 0.140625 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae88-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae88-uv">
+					<float_array id="Buildings_subset_75.dae88-uv-array" count="8">0.490839 0.732257 0.12996 1 0.12996 0.712709 0.490839 1</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae88-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae88-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae88-positions"/>
+				</vertices>
+				<triangles count="2" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae88-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae88-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae88-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 0 0 0 1 0 1 3 0 3</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae89">
+			<mesh>
+				<source id="Buildings_subset_75.dae89-positions">
+					<float_array id="Buildings_subset_75.dae89-positions-array" count="12">-71.2489 -135.474 1.1803 31.2489 -148.902 58.3361 31.2594 -148.908 0 -71.259 -135.468 58.3163</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae89-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae89-normals">
+					<float_array id="Buildings_subset_75.dae89-normals-array" count="3">-0.0390625 -0.898438 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae89-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae89-uv">
+					<float_array id="Buildings_subset_75.dae89-uv-array" count="8">0.12996 0.712709 0 1 0 0.706674 0.12996 1</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae89-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae89-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae89-positions"/>
+				</vertices>
+				<triangles count="2" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae89-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae89-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae89-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 0 0 0 1 0 1 3 0 3</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae90">
+			<mesh>
+				<source id="Buildings_subset_75.dae90-positions">
+					<float_array id="Buildings_subset_75.dae90-positions-array" count="12">31.2489 -148.902 58.3361 71.259 135.446 3.928 31.2594 -148.908 0 71.2489 135.451 58.3136</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae90-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae90-normals">
+					<float_array id="Buildings_subset_75.dae90-normals-array" count="3">0.992188 -0.046875 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae90-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae90-uv">
+					<float_array id="Buildings_subset_75.dae90-uv-array" count="8">0.982614 1 0.621647 0.726538 0.982614 0.706674 0.621647 1</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae90-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae90-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae90-positions"/>
+				</vertices>
+				<triangles count="2" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae90-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae90-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae90-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 0 0 0 1 0 1 3 0 3</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae91">
+			<mesh>
+				<source id="Buildings_subset_75.dae91-positions">
+					<float_array id="Buildings_subset_75.dae91-positions-array" count="12">-8.49557 -12.4865 94.3989 -6.24459 3.83169 76.319 -8.49229 -12.4885 76.3203 -6.24787 3.83366 94.3976</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae91-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae91-normals">
+					<float_array id="Buildings_subset_75.dae91-normals-array" count="3">0.992188 -0.0390625 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae91-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae91-uv">
+					<float_array id="Buildings_subset_75.dae91-uv-array" count="8">0.791332 0.221223 0.770622 0.312126 0.791332 0.312126 0.770622 0.221223</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae91-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae91-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae91-positions"/>
+				</vertices>
+				<triangles count="2" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae91-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae91-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae91-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 0 0 0 1 0 1 3 0 3</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae92">
+			<mesh>
+				<source id="Buildings_subset_75.dae92-positions">
+					<float_array id="Buildings_subset_75.dae92-positions-array" count="21">-6.24459 3.83169 76.319 -21.8407 5.85531 76.3416 -21.8407 5.85531 76.3159 -6.24787 3.83366 94.3976 -26.9044 6.51378 94.3936 -26.9008 6.51148 73.1788 -21.8378 5.85367 59.9274</float_array>
+					<technique_common>
+						<accessor count="7" source="#Buildings_subset_75.dae92-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae92-normals">
+					<float_array id="Buildings_subset_75.dae92-normals-array" count="3">0.125 0.992188 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae92-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae92-uv">
+					<float_array id="Buildings_subset_75.dae92-uv-array" count="12">0.770622 0.312126 0.750853 0.311997 0.770622 0.221223 0.744438 0.221223 0.744438 0.327896 0.750853 0.394531</float_array>
+					<technique_common>
+						<accessor count="6" source="#Buildings_subset_75.dae92-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae92-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae92-positions"/>
+				</vertices>
+				<triangles count="5" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae92-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae92-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae92-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 0 0 0 1 0 1 3 0 2 3 0 2 1 0 1 4 0 3 5 0 4 4 0 3 1 0 1 2 0 1 2 0 2 6 0 5</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae93">
+			<mesh>
+				<source id="Buildings_subset_75.dae93-positions">
+					<float_array id="Buildings_subset_75.dae93-positions-array" count="12">-26.9008 6.51148 73.1788 -30.1209 -16.8934 94.3955 -30.117 -16.8957 73.2338 -26.9044 6.51378 94.3936</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae93-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae93-normals">
+					<float_array id="Buildings_subset_75.dae93-normals-array" count="3">-0.898438 0.132813 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae93-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae93-uv">
+					<float_array id="Buildings_subset_75.dae93-uv-array" count="8">0.744438 0.327896 0.714737 0.221223 0.714737 0.327628 0.744438 0.221223</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae93-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae93-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae93-positions"/>
+				</vertices>
+				<triangles count="2" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae93-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae93-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae93-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 0 0 0 1 0 1 3 0 3</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae94">
+			<mesh>
+				<source id="Buildings_subset_75.dae94-positions">
+					<float_array id="Buildings_subset_75.dae94-positions-array" count="21">-30.1209 -16.8934 94.3955 -25.1508 -17.539 76.3379 -30.117 -16.8957 73.2338 -19.3588 -18.2897 76.3189 -25.1508 -17.539 76.3178 -19.362 -18.2877 94.3975 -25.1478 -17.5407 59.9292</float_array>
+					<technique_common>
+						<accessor count="7" source="#Buildings_subset_75.dae94-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae94-normals">
+					<float_array id="Buildings_subset_75.dae94-normals-array" count="3">-0.03125 -0.898438 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae94-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae94-uv">
+					<float_array id="Buildings_subset_75.dae94-uv-array" count="12">0.714737 0.221223 0.708442 0.312025 0.714737 0.327628 0.7011 0.312126 0.7011 0.221223 0.708442 0.394531</float_array>
+					<technique_common>
+						<accessor count="6" source="#Buildings_subset_75.dae94-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae94-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae94-positions"/>
+				</vertices>
+				<triangles count="5" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae94-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae94-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae94-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 3 0 3 1 0 1 4 0 0 1 0 1 3 0 3 5 0 4 1 0 1 5 0 4 0 0 0 6 0 5 4 0 0 4 0 1</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae95">
+			<mesh>
+				<source id="Buildings_subset_75.dae95-positions">
+					<float_array id="Buildings_subset_75.dae95-positions-array" count="12">-19.362 -18.2877 94.3975 -18.3512 -11.0367 76.3183 -19.3588 -18.2897 76.3189 -18.3542 -11.0348 94.397</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae95-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae95-normals">
+					<float_array id="Buildings_subset_75.dae95-normals-array" count="3">0.992188 -0.046875 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae95-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae95-uv">
+					<float_array id="Buildings_subset_75.dae95-uv-array" count="8">0.7011 0.221223 0.691895 0.312126 0.7011 0.312126 0.691895 0.221223</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae95-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae95-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae95-positions"/>
+				</vertices>
+				<triangles count="2" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae95-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae95-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae95-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 0 0 0 1 0 1 3 0 3</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae96">
+			<mesh>
+				<source id="Buildings_subset_75.dae96-positions">
+					<float_array id="Buildings_subset_75.dae96-positions-array" count="12">-18.3542 -11.0348 94.397 -8.49229 -12.4885 76.3203 -18.3512 -11.0367 76.3183 -8.49557 -12.4865 94.3989</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae96-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae96-normals">
+					<float_array id="Buildings_subset_75.dae96-normals-array" count="3">-0.0546875 -0.898438 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae96-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae96-uv">
+					<float_array id="Buildings_subset_75.dae96-uv-array" count="8">0.803858 0.221223 0.791332 0.312126 0.803858 0.312126 0.791332 0.221223</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae96-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae96-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae96-positions"/>
+				</vertices>
+				<triangles count="2" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae96-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae96-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae96-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 0 0 0 1 0 1 3 0 3</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae97">
+			<mesh>
+				<source id="Buildings_subset_75.dae97-positions">
+					<float_array id="Buildings_subset_75.dae97-positions-array" count="12">8.65961 -81.7999 92.9032 9.6081 -81.0951 76.3308 8.66257 -81.8015 76.3307 9.60515 -81.0932 92.9033</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae97-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae97-normals">
+					<float_array id="Buildings_subset_75.dae97-normals-array" count="3">0.601563 -0.710938 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae97-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae97-uv">
+					<float_array id="Buildings_subset_75.dae97-uv-array" count="8">0.810813 0.481123 0.812297 0.564453 0.810813 0.564453 0.812297 0.481123</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae97-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae97-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae97-positions"/>
+				</vertices>
+				<triangles count="2" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae97-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae97-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae97-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 0 0 0 1 0 1 3 0 3</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae98">
+			<mesh>
+				<source id="Buildings_subset_75.dae98-positions">
+					<float_array id="Buildings_subset_75.dae98-positions-array" count="12">9.6081 -81.0951 76.3308 -6.09925 -79.0948 92.9003 -6.09596 -79.0968 76.3278 9.60515 -81.0932 92.9033</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae98-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae98-normals">
+					<float_array id="Buildings_subset_75.dae98-normals-array" count="3">0.125 0.992188 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae98-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae98-uv">
+					<float_array id="Buildings_subset_75.dae98-uv-array" count="8">0.812297 0.564453 0.832197 0.481123 0.832197 0.564453 0.812297 0.481123</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae98-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae98-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae98-positions"/>
+				</vertices>
+				<triangles count="2" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae98-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae98-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae98-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 0 0 0 1 0 1 3 0 3</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae99">
+			<mesh>
+				<source id="Buildings_subset_75.dae99-positions">
+					<float_array id="Buildings_subset_75.dae99-positions-array" count="12">-6.09596 -79.0968 76.3278 -6.25082 -81.1726 92.9005 -6.24787 -81.1742 76.328 -6.09925 -79.0948 92.9003</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae99-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae99-normals">
+					<float_array id="Buildings_subset_75.dae99-normals-array" count="3">-0.90625 0.0703125 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae99-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae99-uv">
+					<float_array id="Buildings_subset_75.dae99-uv-array" count="8">0.832197 0.564453 0.834816 0.481123 0.834816 0.564453 0.832197 0.481123</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae99-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae99-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae99-positions"/>
+				</vertices>
+				<triangles count="2" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae99-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae99-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae99-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 0 0 0 1 0 1 3 0 3</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae100">
+			<mesh>
+				<source id="Buildings_subset_75.dae100-positions">
+					<float_array id="Buildings_subset_75.dae100-positions-array" count="33">-6.24787 -81.1742 76.328 -7.80069 -80.9692 78.3144 -7.80036 -80.9695 76.3277 -6.25082 -81.1726 92.9005 -11.2085 -80.5194 79.256 -11.2085 -80.5194 79.2742 -22.1885 -79.0686 92.8974 -14.3177 -80.1089 76.3264 -22.1855 -79.0705 76.3249 -14.3181 -80.1089 78.2918 -11.2082 -80.5197 76.327</float_array>
+					<technique_common>
+						<accessor count="11" source="#Buildings_subset_75.dae100-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae100-normals">
+					<float_array id="Buildings_subset_75.dae100-normals-array" count="3">0.132813 0.992188 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae100-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae100-uv">
+					<float_array id="Buildings_subset_75.dae100-uv-array" count="20">0.834816 0.564453 0.836784 0.554464 0.836784 0.564453 0.834816 0.481123 0.841105 0.549634 0.855025 0.481123 0.845048 0.564453 0.855025 0.564453 0.845048 0.554571 0.841105 0.564453</float_array>
+					<technique_common>
+						<accessor count="10" source="#Buildings_subset_75.dae100-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae100-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae100-positions"/>
+				</vertices>
+				<triangles count="9" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae100-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae100-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae100-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 0 0 0 1 0 1 3 0 3 3 0 3 1 0 1 4 0 3 3 0 3 4 0 3 5 0 4 3 0 3 5 0 4 6 0 5 6 0 5 7 0 6 8 0 7 7 0 6 6 0 5 9 0 8 9 0 8 6 0 5 5 0 4 10 0 9 4 0 4 4 0 3</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae101">
+			<mesh>
+				<source id="Buildings_subset_75.dae101-positions">
+					<float_array id="Buildings_subset_75.dae101-positions-array" count="12">-22.1855 -79.0705 76.3249 -25.658 -102.544 92.8993 -25.655 -102.546 76.3268 -22.1885 -79.0686 92.8974</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae101-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae101-normals">
+					<float_array id="Buildings_subset_75.dae101-normals-array" count="3">-0.898438 0.148438 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae101-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae101-uv">
+					<float_array id="Buildings_subset_75.dae101-uv-array" count="8">0.855025 0.564453 0.884855 0.481123 0.884855 0.564453 0.855025 0.481123</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae101-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae101-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae101-positions"/>
+				</vertices>
+				<triangles count="2" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae101-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae101-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae101-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 0 0 0 1 0 1 3 0 3</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae102">
+			<mesh>
+				<source id="Buildings_subset_75.dae102-positions">
+					<float_array id="Buildings_subset_75.dae102-positions-array" count="12">-25.658 -102.544 92.8993 -7.66716 -105.026 76.3303 -25.655 -102.546 76.3268 -7.67011 -105.024 92.9028</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae102-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae102-normals">
+					<float_array id="Buildings_subset_75.dae102-normals-array" count="3">-0.0390625 -0.898438 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae102-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae102-uv">
+					<float_array id="Buildings_subset_75.dae102-uv-array" count="8">0.884855 0.481123 0.907681 0.564453 0.884855 0.564453 0.907681 0.481123</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae102-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae102-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae102-positions"/>
+				</vertices>
+				<triangles count="2" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae102-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae102-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae102-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 0 0 0 1 0 1 3 0 3</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae103">
+			<mesh>
+				<source id="Buildings_subset_75.dae103-positions">
+					<float_array id="Buildings_subset_75.dae103-positions-array" count="12">-7.67011 -105.024 92.9028 -5.58415 -90.6591 76.3291 -7.66716 -105.026 76.3303 -5.58711 -90.6572 92.9016</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae103-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae103-normals">
+					<float_array id="Buildings_subset_75.dae103-normals-array" count="3">0.992188 -0.046875 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae103-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae103-uv">
+					<float_array id="Buildings_subset_75.dae103-uv-array" count="8">0.907681 0.481123 0.925929 0.564453 0.907681 0.564453 0.925929 0.481123</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae103-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae103-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae103-positions"/>
+				</vertices>
+				<triangles count="2" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae103-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae103-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae103-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 0 0 0 1 0 1 3 0 3</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae104">
+			<mesh>
+				<source id="Buildings_subset_75.dae104-positions">
+					<float_array id="Buildings_subset_75.dae104-positions-array" count="12">-5.58711 -90.6572 92.9016 7.78002 -92.3609 76.3317 -5.58415 -90.6591 76.3291 7.77707 -92.3593 92.9042</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae104-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae104-normals">
+					<float_array id="Buildings_subset_75.dae104-normals-array" count="3">-0.03125 -0.898438 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae104-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae104-uv">
+					<float_array id="Buildings_subset_75.dae104-uv-array" count="8">0.925929 0.481123 0.942865 0.564453 0.925929 0.564453 0.942865 0.481123</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae104-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae104-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae104-positions"/>
+				</vertices>
+				<triangles count="2" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae104-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae104-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae104-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 0 0 0 1 0 1 3 0 3</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae105">
+			<mesh>
+				<source id="Buildings_subset_75.dae105-positions">
+					<float_array id="Buildings_subset_75.dae105-positions-array" count="12">7.77707 -92.3593 92.9042 9.6081 -81.0951 76.3308 7.78002 -92.3609 76.3317 9.60515 -81.0932 92.9033</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae105-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae105-normals">
+					<float_array id="Buildings_subset_75.dae105-normals-array" count="3">0.984375 -0.0703125 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae105-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae105-uv">
+					<float_array id="Buildings_subset_75.dae105-uv-array" count="8">0.79795 0.481123 0.812297 0.564453 0.79795 0.564453 0.812297 0.481123</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae105-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae105-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae105-positions"/>
+				</vertices>
+				<triangles count="2" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae105-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae105-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae105-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 0 0 0 1 0 1 3 0 3</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae106">
+			<mesh>
+				<source id="Buildings_subset_75.dae106-positions">
+					<float_array id="Buildings_subset_75.dae106-positions-array" count="12">9.6081 -81.0951 76.3308 8.65961 -81.7999 92.9032 8.66257 -81.8015 76.3307 9.60515 -81.0932 92.9033</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae106-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae106-normals">
+					<float_array id="Buildings_subset_75.dae106-normals-array" count="3">-0.507813 0.804688 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae106-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae106-uv">
+					<float_array id="Buildings_subset_75.dae106-uv-array" count="8">0.812297 0.397793 0.810813 0.481123 0.810813 0.397793 0.812297 0.481123</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae106-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae106-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae106-positions"/>
+				</vertices>
+				<triangles count="2" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae106-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae106-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae106-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 0 0 0 1 0 1 3 0 3</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae107">
+			<mesh>
+				<source id="Buildings_subset_75.dae107-positions">
+					<float_array id="Buildings_subset_75.dae107-positions-array" count="12">8.66257 -81.8015 76.3307 7.09432 -91.4455 92.904 7.09728 -91.4472 76.3315 8.65961 -81.7999 92.9032</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae107-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae107-normals">
+					<float_array id="Buildings_subset_75.dae107-normals-array" count="3">-0.890625 0.164063 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae107-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae107-uv">
+					<float_array id="Buildings_subset_75.dae107-uv-array" count="8">0.810813 0.397793 0.79853 0.481123 0.79853 0.397793 0.810813 0.481123</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae107-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae107-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae107-positions"/>
+				</vertices>
+				<triangles count="2" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae107-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae107-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae107-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 0 0 0 1 0 1 3 0 3</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae108">
+			<mesh>
+				<source id="Buildings_subset_75.dae108-positions">
+					<float_array id="Buildings_subset_75.dae108-positions-array" count="12">7.09728 -91.4472 76.3315 -6.2833 -89.7418 92.9014 -6.28035 -89.7438 76.3289 7.09432 -91.4455 92.904</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae108-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae108-normals">
+					<float_array id="Buildings_subset_75.dae108-normals-array" count="3">0.125 0.992188 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae108-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae108-uv">
+					<float_array id="Buildings_subset_75.dae108-uv-array" count="8">0.79853 0.397793 0.781577 0.481123 0.781577 0.397793 0.79853 0.481123</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae108-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae108-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae108-positions"/>
+				</vertices>
+				<triangles count="2" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae108-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae108-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae108-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 0 0 0 1 0 1 3 0 3</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae109">
+			<mesh>
+				<source id="Buildings_subset_75.dae109-positions">
+					<float_array id="Buildings_subset_75.dae109-positions-array" count="12">-6.28035 -89.7438 76.3289 -8.36499 -104.1 92.9026 -8.36171 -104.102 76.3301 -6.2833 -89.7418 92.9014</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae109-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae109-normals">
+					<float_array id="Buildings_subset_75.dae109-normals-array" count="3">-0.898438 0.140625 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae109-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae109-uv">
+					<float_array id="Buildings_subset_75.dae109-uv-array" count="8">0.781577 0.397793 0.76334 0.481123 0.76334 0.397793 0.781577 0.481123</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae109-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae109-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae109-positions"/>
+				</vertices>
+				<triangles count="2" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae109-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae109-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae109-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 0 0 0 1 0 1 3 0 3</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae110">
+			<mesh>
+				<source id="Buildings_subset_75.dae110-positions">
+					<float_array id="Buildings_subset_75.dae110-positions-array" count="12">-8.36171 -104.102 76.3301 -24.7256 -101.844 92.8994 -24.7226 -101.846 76.3269 -8.36499 -104.1 92.9026</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae110-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae110-normals">
+					<float_array id="Buildings_subset_75.dae110-normals-array" count="3">0.132813 0.992188 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae110-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae110-uv">
+					<float_array id="Buildings_subset_75.dae110-uv-array" count="8">0.76334 0.397793 0.742578 0.481123 0.742578 0.397793 0.76334 0.481123</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae110-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae110-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae110-positions"/>
+				</vertices>
+				<triangles count="2" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae110-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae110-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae110-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 0 0 0 1 0 1 3 0 3</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae111">
+			<mesh>
+				<source id="Buildings_subset_75.dae111-positions">
+					<float_array id="Buildings_subset_75.dae111-positions-array" count="12">-24.7256 -101.844 92.8994 -21.4923 -79.9892 76.3251 -24.7226 -101.846 76.3269 -21.4952 -79.9875 92.8976</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae111-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae111-normals">
+					<float_array id="Buildings_subset_75.dae111-normals-array" count="3">0.992188 -0.0546875 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae111-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae111-uv">
+					<float_array id="Buildings_subset_75.dae111-uv-array" count="8">0.742578 0.481123 0.714805 0.397793 0.742578 0.397793 0.714805 0.481123</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae111-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae111-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae111-positions"/>
+				</vertices>
+				<triangles count="2" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae111-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae111-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae111-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 0 0 0 1 0 1 3 0 3</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae112">
+			<mesh>
+				<source id="Buildings_subset_75.dae112-positions">
+					<float_array id="Buildings_subset_75.dae112-positions-array" count="33">-11.3204 -81.3317 79.2559 -11.3197 -81.332 76.3271 -21.4952 -79.9875 92.8976 -14.43 -80.9216 76.3265 -21.4923 -79.9892 76.3251 -14.4303 -80.9213 78.2918 -11.3204 -81.3317 79.2744 -7.91289 -81.7818 78.3145 -5.49327 -82.1014 76.3282 -7.91257 -81.7818 76.3278 -5.49623 -82.0994 92.9007</float_array>
+					<technique_common>
+						<accessor count="11" source="#Buildings_subset_75.dae112-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae112-normals">
+					<float_array id="Buildings_subset_75.dae112-normals-array" count="3">-0.0390625 -0.898438 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae112-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae112-uv">
+					<float_array id="Buildings_subset_75.dae112-uv-array" count="20">0.701906 0.41252 0.714805 0.481123 0.701906 0.397793 0.70585 0.397793 0.714805 0.397793 0.70585 0.407675 0.697586 0.407783 0.694518 0.397793 0.697586 0.397793 0.694518 0.481123</float_array>
+					<technique_common>
+						<accessor count="10" source="#Buildings_subset_75.dae112-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae112-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae112-positions"/>
+				</vertices>
+				<triangles count="9" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae112-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae112-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae112-uv" set="0"/>
+					<p>0 0 1 0 0 0 1 0 2 3 0 3 2 0 1 4 0 4 2 0 1 3 0 3 5 0 5 2 0 1 5 0 5 6 0 0 8 0 7 7 0 6 9 0 8 7 0 6 8 0 7 10 0 9 7 0 6 10 0 9 0 0 1 0 0 1 10 0 9 6 0 0 6 0 0 10 0 9 2 0 1</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae113">
+			<mesh>
+				<source id="Buildings_subset_75.dae113-positions">
+					<float_array id="Buildings_subset_75.dae113-positions-array" count="12">-5.49623 -82.0994 92.9007 -5.34104 -80.0197 76.328 -5.49327 -82.1014 76.3282 -5.344 -80.0177 92.9005</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae113-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae113-normals">
+					<float_array id="Buildings_subset_75.dae113-normals-array" count="3">1 0 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae113-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae113-uv">
+					<float_array id="Buildings_subset_75.dae113-uv-array" count="8">0.694518 0.481123 0.691895 0.397793 0.694518 0.397793 0.691895 0.481123</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae113-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae113-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae113-positions"/>
+				</vertices>
+				<triangles count="2" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae113-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae113-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae113-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 0 0 0 1 0 1 3 0 3</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae114">
+			<mesh>
+				<source id="Buildings_subset_75.dae114-positions">
+					<float_array id="Buildings_subset_75.dae114-positions-array" count="12">-5.344 -80.0177 92.9005 8.66257 -81.8015 76.3307 -5.34104 -80.0197 76.328 8.65961 -81.7999 92.9032</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae114-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae114-normals">
+					<float_array id="Buildings_subset_75.dae114-normals-array" count="3">-0.03125 -0.898438 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae114-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae114-uv">
+					<float_array id="Buildings_subset_75.dae114-uv-array" count="8">0.793068 0.481123 0.810813 0.564453 0.793068 0.564453 0.810813 0.481123</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae114-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae114-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae114-positions"/>
+				</vertices>
+				<triangles count="2" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae114-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae114-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae114-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 0 0 0 1 0 1 3 0 3</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae115">
+			<mesh>
+				<source id="Buildings_subset_75.dae115-positions">
+					<float_array id="Buildings_subset_75.dae115-positions-array" count="12">-18.6281 -95.4347 92.1947 -10.5976 -96.4042 76.3289 -18.6252 -95.4364 76.3273 -10.6002 -96.4026 92.1963</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae115-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae115-normals">
+					<float_array id="Buildings_subset_75.dae115-normals-array" count="3">-0.0234375 -0.898438 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae115-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae115-uv">
+					<float_array id="Buildings_subset_75.dae115-uv-array" count="8">0.698958 0.5667 0.709122 0.646484 0.698958 0.646484 0.709122 0.5667</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae115-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae115-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae115-positions"/>
+				</vertices>
+				<triangles count="2" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae115-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae115-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae115-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 0 0 0 1 0 1 3 0 3</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae116">
+			<mesh>
+				<source id="Buildings_subset_75.dae116-positions">
+					<float_array id="Buildings_subset_75.dae116-positions-array" count="12">-10.6002 -96.4026 92.1963 -9.50607 -87.3547 76.3281 -10.5976 -96.4042 76.3289 -9.50869 -87.353 92.1955</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae116-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae116-normals">
+					<float_array id="Buildings_subset_75.dae116-normals-array" count="3">0.992188 -0.0234375 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae116-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae116-uv">
+					<float_array id="Buildings_subset_75.dae116-uv-array" count="8">0.709122 0.5667 0.720581 0.646484 0.709122 0.646484 0.720581 0.5667</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae116-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae116-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae116-positions"/>
+				</vertices>
+				<triangles count="2" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae116-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae116-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae116-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 0 0 0 1 0 1 3 0 3</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae117">
+			<mesh>
+				<source id="Buildings_subset_75.dae117-positions">
+					<float_array id="Buildings_subset_75.dae117-positions-array" count="12">-9.50607 -87.3547 76.3281 -17.5356 -86.3855 92.194 -17.533 -86.3871 76.3265 -9.50869 -87.353 92.1955</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae117-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae117-normals">
+					<float_array id="Buildings_subset_75.dae117-normals-array" count="3">0.117188 0.992188 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae117-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae117-uv">
+					<float_array id="Buildings_subset_75.dae117-uv-array" count="8">0.720581 0.646484 0.730744 0.5667 0.730744 0.646484 0.720581 0.5667</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae117-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae117-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae117-positions"/>
+				</vertices>
+				<triangles count="2" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae117-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae117-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae117-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 0 0 0 1 0 1 3 0 3</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae118">
+			<mesh>
+				<source id="Buildings_subset_75.dae118-positions">
+					<float_array id="Buildings_subset_75.dae118-positions-array" count="12">-17.533 -86.3871 76.3265 -18.6281 -95.4347 92.1947 -18.6252 -95.4364 76.3273 -17.5356 -86.3855 92.194</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae118-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae118-normals">
+					<float_array id="Buildings_subset_75.dae118-normals-array" count="3">-0.898438 0.117188 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae118-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae118-uv">
+					<float_array id="Buildings_subset_75.dae118-uv-array" count="8">0.6875 0.646484 0.698958 0.5667 0.698958 0.646484 0.6875 0.5667</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae118-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae118-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae118-positions"/>
+				</vertices>
+				<triangles count="2" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae118-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae118-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae118-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 0 0 0 1 0 1 3 0 3</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae119">
+			<mesh>
+				<source id="Buildings_subset_75.dae119-positions">
+					<float_array id="Buildings_subset_75.dae119-positions-array" count="12">30.3686 100.878 88.1291 31.2961 101.578 76.3158 30.3709 100.877 76.3157 31.2941 101.579 88.1292</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae119-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae119-normals">
+					<float_array id="Buildings_subset_75.dae119-normals-array" count="3">0.601563 -0.703125 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae119-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae119-uv">
+					<float_array id="Buildings_subset_75.dae119-uv-array" count="8">0.181376 0.587084 0.182835 0.646484 0.181376 0.646484 0.182835 0.587084</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae119-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae119-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae119-positions"/>
+				</vertices>
+				<triangles count="2" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae119-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae119-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae119-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 0 0 0 1 0 1 3 0 3</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae120">
+			<mesh>
+				<source id="Buildings_subset_75.dae120-positions">
+					<float_array id="Buildings_subset_75.dae120-positions-array" count="12">31.2961 101.578 76.3158 9.06152 104.627 88.1249 9.06381 104.625 76.3114 31.2941 101.579 88.1292</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae120-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae120-normals">
+					<float_array id="Buildings_subset_75.dae120-normals-array" count="3">0.132813 0.992188 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae120-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae120-uv">
+					<float_array id="Buildings_subset_75.dae120-uv-array" count="8">0.182835 0.646484 0.211044 0.587084 0.211044 0.646484 0.182835 0.587084</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae120-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae120-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae120-positions"/>
+				</vertices>
+				<triangles count="2" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae120-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae120-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae120-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 0 0 0 1 0 1 3 0 3</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae121">
+			<mesh>
+				<source id="Buildings_subset_75.dae121-positions">
+					<float_array id="Buildings_subset_75.dae121-positions-array" count="12">9.06381 104.625 76.3114 7.75148 96.7067 88.1254 7.75377 96.7057 76.312 9.06152 104.627 88.1249</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae121-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae121-normals">
+					<float_array id="Buildings_subset_75.dae121-normals-array" count="3">-0.890625 0.164063 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae121-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae121-uv">
+					<float_array id="Buildings_subset_75.dae121-uv-array" count="8">0.211044 0.646484 0.221135 0.587084 0.221135 0.646484 0.211044 0.587084</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae121-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae121-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae121-positions"/>
+				</vertices>
+				<triangles count="2" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae121-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae121-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae121-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 0 0 0 1 0 1 3 0 3</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae122">
+			<mesh>
+				<source id="Buildings_subset_75.dae122-positions">
+					<float_array id="Buildings_subset_75.dae122-positions-array" count="12">7.75377 96.7057 76.312 -8.47228 98.815 88.1223 -8.47031 98.8136 76.3089 7.75148 96.7067 88.1254</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae122-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae122-normals">
+					<float_array id="Buildings_subset_75.dae122-normals-array" count="3">0.125 0.992188 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae122-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae122-uv">
+					<float_array id="Buildings_subset_75.dae122-uv-array" count="8">0.221135 0.646484 0.241701 0.587084 0.241701 0.646484 0.221135 0.587084</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae122-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae122-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae122-positions"/>
+				</vertices>
+				<triangles count="2" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae122-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae122-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae122-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 0 0 0 1 0 1 3 0 3</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae123">
+			<mesh>
+				<source id="Buildings_subset_75.dae123-positions">
+					<float_array id="Buildings_subset_75.dae123-positions-array" count="12">-8.47031 98.8136 76.3089 -13.9398 60.3461 88.1252 -13.9378 60.3448 76.3118 -8.47228 98.815 88.1223</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae123-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae123-normals">
+					<float_array id="Buildings_subset_75.dae123-normals-array" count="3">-0.898438 0.140625 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae123-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae123-uv">
+					<float_array id="Buildings_subset_75.dae123-uv-array" count="8">0.241701 0.646484 0.290544 0.587084 0.290544 0.646484 0.241701 0.587084</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae123-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae123-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae123-positions"/>
+				</vertices>
+				<triangles count="2" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae123-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae123-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae123-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 0 0 0 1 0 1 3 0 3</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae124">
+			<mesh>
+				<source id="Buildings_subset_75.dae124-positions">
+					<float_array id="Buildings_subset_75.dae124-positions-array" count="12">-13.9398 60.3461 88.1252 4.57333 57.8875 76.3153 -13.9378 60.3448 76.3118 4.57103 57.8888 88.1288</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae124-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae124-normals">
+					<float_array id="Buildings_subset_75.dae124-normals-array" count="3">-0.0390625 -0.898438 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae124-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae124-uv">
+					<float_array id="Buildings_subset_75.dae124-uv-array" count="8">0.290544 0.587084 0.314018 0.646484 0.290544 0.646484 0.314018 0.587084</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae124-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae124-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae124-positions"/>
+				</vertices>
+				<triangles count="2" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae124-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae124-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae124-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 0 0 0 1 0 1 3 0 3</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae125">
+			<mesh>
+				<source id="Buildings_subset_75.dae125-positions">
+					<float_array id="Buildings_subset_75.dae125-positions-array" count="12">4.57103 57.8888 88.1288 7.57365 80.0217 76.3136 4.57333 57.8875 76.3153 7.57169 80.0226 88.1271</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae125-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae125-normals">
+					<float_array id="Buildings_subset_75.dae125-normals-array" count="3">0.992188 -0.0390625 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae125-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae125-uv">
+					<float_array id="Buildings_subset_75.dae125-uv-array" count="8">0.314018 0.587084 0.342096 0.646484 0.314018 0.646484 0.342096 0.587084</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae125-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae125-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae125-positions"/>
+				</vertices>
+				<triangles count="2" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae125-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae125-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae125-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 0 0 0 1 0 1 3 0 3</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae126">
+			<mesh>
+				<source id="Buildings_subset_75.dae126-positions">
+					<float_array id="Buildings_subset_75.dae126-positions-array" count="33">7.57169 80.0226 88.1271 7.80167 79.9918 76.3137 7.57365 80.0217 76.3136 7.80135 79.9921 78.2995 10.7817 79.604 79.2409 10.7817 79.604 79.2609 14.3184 79.1434 78.284 27.9355 77.3694 76.3176 14.3187 79.143 76.3149 27.9332 77.3707 88.131 10.7823 79.6037 76.3143</float_array>
+					<technique_common>
+						<accessor count="11" source="#Buildings_subset_75.dae126-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae126-normals">
+					<float_array id="Buildings_subset_75.dae126-normals-array" count="3">-0.0390625 -0.898438 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae126-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae126-uv">
+					<float_array id="Buildings_subset_75.dae126-uv-array" count="18">0.342096 0.587084 0.342385 0.646484 0.342385 0.636499 0.346163 0.631768 0.350646 0.636584 0.367908 0.646484 0.350646 0.646484 0.367908 0.587084 0.346163 0.646484</float_array>
+					<technique_common>
+						<accessor count="9" source="#Buildings_subset_75.dae126-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae126-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae126-positions"/>
+				</vertices>
+				<triangles count="9" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae126-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae126-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae126-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 1 0 0 0 1 0 1 3 0 2 0 0 0 3 0 2 4 0 3 0 0 0 4 0 3 5 0 3 7 0 5 6 0 4 8 0 6 6 0 4 7 0 5 9 0 7 6 0 4 9 0 7 5 0 3 5 0 3 9 0 7 0 0 0 10 0 8 5 0 3 4 0 3</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae127">
+			<mesh>
+				<source id="Buildings_subset_75.dae127-positions">
+					<float_array id="Buildings_subset_75.dae127-positions-array" count="12">27.9332 77.3707 88.131 31.2961 101.578 76.3158 27.9355 77.3694 76.3176 31.2941 101.579 88.1292</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae127-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae127-normals">
+					<float_array id="Buildings_subset_75.dae127-normals-array" count="3">0.992188 -0.046875 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae127-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae127-uv">
+					<float_array id="Buildings_subset_75.dae127-uv-array" count="8">0.152111 0.587084 0.182835 0.646484 0.152111 0.646484 0.182835 0.587084</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae127-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae127-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae127-positions"/>
+				</vertices>
+				<triangles count="2" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae127-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae127-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae127-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 0 0 0 1 0 1 3 0 3</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae128">
+			<mesh>
+				<source id="Buildings_subset_75.dae128-positions">
+					<float_array id="Buildings_subset_75.dae128-positions-array" count="12">31.2961 101.578 76.3158 30.3686 100.878 88.1291 30.3709 100.877 76.3157 31.2941 101.579 88.1292</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae128-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae128-normals">
+					<float_array id="Buildings_subset_75.dae128-normals-array" count="3">-0.507813 0.796875 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae128-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae128-uv">
+					<float_array id="Buildings_subset_75.dae128-uv-array" count="8">0.182835 0.527683 0.181376 0.587084 0.181376 0.527683 0.182835 0.587084</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae128-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae128-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae128-positions"/>
+				</vertices>
+				<triangles count="2" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae128-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae128-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae128-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 0 0 0 1 0 1 3 0 3</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae129">
+			<mesh>
+				<source id="Buildings_subset_75.dae129-positions">
+					<float_array id="Buildings_subset_75.dae129-positions-array" count="12">30.3709 100.877 76.3157 27.2328 78.289 88.1308 27.2347 78.2877 76.3174 30.3686 100.878 88.1291</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae129-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae129-normals">
+					<float_array id="Buildings_subset_75.dae129-normals-array" count="3">-0.898438 0.140625 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae129-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae129-uv">
+					<float_array id="Buildings_subset_75.dae129-uv-array" count="8">0.181376 0.527683 0.152707 0.587084 0.152707 0.527683 0.181376 0.587084</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae129-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae129-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae129-positions"/>
+				</vertices>
+				<triangles count="2" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae129-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae129-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae129-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 0 0 0 1 0 1 3 0 3</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae130">
+			<mesh>
+				<source id="Buildings_subset_75.dae130-positions">
+					<float_array id="Buildings_subset_75.dae130-positions-array" count="33">10.8932 80.4167 79.2609 10.8932 80.4167 79.2408 10.8939 80.4163 76.3142 27.2347 78.2877 76.3174 14.4306 79.9557 78.2838 14.4309 79.9557 76.3149 27.2328 78.289 88.1308 6.86827 80.9416 88.1269 7.91388 80.8045 76.3136 6.87057 80.9403 76.3134 7.91355 80.8045 78.2995</float_array>
+					<technique_common>
+						<accessor count="11" source="#Buildings_subset_75.dae130-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae130-normals">
+					<float_array id="Buildings_subset_75.dae130-normals-array" count="3">0.132813 0.992188 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae130-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae130-uv">
+					<float_array id="Buildings_subset_75.dae130-uv-array" count="20">0.131992 0.5425 0.131992 0.527683 0.152707 0.527683 0.136476 0.537584 0.136476 0.527683 0.152707 0.587084 0.126892 0.587084 0.128215 0.527683 0.126892 0.527683 0.128215 0.537669</float_array>
+					<technique_common>
+						<accessor count="10" source="#Buildings_subset_75.dae130-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae130-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae130-positions"/>
+				</vertices>
+				<triangles count="9" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae130-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae130-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae130-uv" set="0"/>
+					<p>1 0 0 0 0 0 2 0 1 4 0 3 3 0 2 5 0 4 3 0 2 4 0 3 6 0 5 6 0 5 4 0 3 0 0 0 6 0 5 0 0 0 7 0 6 7 0 6 8 0 7 9 0 8 8 0 7 7 0 6 10 0 9 10 0 9 7 0 6 1 0 0 1 0 0 7 0 6 0 0 0</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae131">
+			<mesh>
+				<source id="Buildings_subset_75.dae131-positions">
+					<float_array id="Buildings_subset_75.dae131-positions-array" count="12">6.87057 80.9403 76.3134 3.86827 58.8094 88.1286 3.87057 58.8084 76.3151 6.86827 80.9416 88.1269</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae131-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae131-normals">
+					<float_array id="Buildings_subset_75.dae131-normals-array" count="3">-0.898438 0.132813 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae131-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae131-uv">
+					<float_array id="Buildings_subset_75.dae131-uv-array" count="8">0.126892 0.527683 0.0988161 0.587084 0.0988161 0.527683 0.126892 0.587084</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae131-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae131-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae131-positions"/>
+				</vertices>
+				<triangles count="2" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae131-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae131-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae131-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 0 0 0 1 0 1 3 0 3</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae132">
+			<mesh>
+				<source id="Buildings_subset_75.dae132-positions">
+					<float_array id="Buildings_subset_75.dae132-positions-array" count="12">3.87057 58.8084 76.3151 -13.0113 61.0502 88.1253 -13.0094 61.0492 76.3119 3.86827 58.8094 88.1286</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae132-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae132-normals">
+					<float_array id="Buildings_subset_75.dae132-normals-array" count="3">0.132813 0.992188 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae132-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae132-uv">
+					<float_array id="Buildings_subset_75.dae132-uv-array" count="8">0.0988161 0.527683 0.0774112 0.587084 0.0774112 0.527683 0.0988161 0.587084</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae132-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae132-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae132-positions"/>
+				</vertices>
+				<triangles count="2" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae132-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae132-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae132-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 0 0 0 1 0 1 3 0 3</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae133">
+			<mesh>
+				<source id="Buildings_subset_75.dae133-positions">
+					<float_array id="Buildings_subset_75.dae133-positions-array" count="12">-13.0113 61.0502 88.1253 -7.77215 97.896 76.3091 -13.0094 61.0492 76.3119 -7.77444 97.8973 88.1225</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae133-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae133-normals">
+					<float_array id="Buildings_subset_75.dae133-normals-array" count="3">0.992188 -0.046875 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae133-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae133-uv">
+					<float_array id="Buildings_subset_75.dae133-uv-array" count="8">0.0774112 0.587084 0.0306269 0.527683 0.0774112 0.527683 0.0306269 0.587084</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae133-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae133-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae133-positions"/>
+				</vertices>
+				<triangles count="2" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae133-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae133-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae133-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 0 0 0 1 0 1 3 0 3</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae134">
+			<mesh>
+				<source id="Buildings_subset_75.dae134-positions">
+					<float_array id="Buildings_subset_75.dae134-positions-array" count="12">-7.77444 97.8973 88.1225 8.43356 95.79 76.3122 -7.77215 97.896 76.3091 8.43159 95.7913 88.1257</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae134-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae134-normals">
+					<float_array id="Buildings_subset_75.dae134-normals-array" count="3">-0.03125 -0.898438 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae134-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae134-uv">
+					<float_array id="Buildings_subset_75.dae134-uv-array" count="8">0.0306269 0.587084 0.010084 0.527683 0.0306269 0.527683 0.010084 0.587084</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae134-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae134-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae134-positions"/>
+				</vertices>
+				<triangles count="2" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae134-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae134-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae134-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 0 0 0 1 0 1 3 0 3</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae135">
+			<mesh>
+				<source id="Buildings_subset_75.dae135-positions">
+					<float_array id="Buildings_subset_75.dae135-positions-array" count="12">8.43159 95.7913 88.1257 9.74295 103.704 76.3117 8.43356 95.79 76.3122 9.74065 103.706 88.1251</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae135-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae135-normals">
+					<float_array id="Buildings_subset_75.dae135-normals-array" count="3">0.984375 -0.0703125 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae135-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae135-uv">
+					<float_array id="Buildings_subset_75.dae135-uv-array" count="8">0.010084 0.587084 0 0.527683 0.010084 0.527683 0 0.587084</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae135-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae135-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae135-positions"/>
+				</vertices>
+				<triangles count="2" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae135-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae135-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae135-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 0 0 0 1 0 1 3 0 3</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae136">
+			<mesh>
+				<source id="Buildings_subset_75.dae136-positions">
+					<float_array id="Buildings_subset_75.dae136-positions-array" count="12">9.74065 103.706 88.1251 30.3709 100.877 76.3157 9.74295 103.704 76.3117 30.3686 100.878 88.1291</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae136-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae136-normals">
+					<float_array id="Buildings_subset_75.dae136-normals-array" count="3">-0.0390625 -0.898438 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae136-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae136-uv">
+					<float_array id="Buildings_subset_75.dae136-uv-array" count="8">0.155202 0.587084 0.181376 0.646484 0.155202 0.646484 0.181376 0.587084</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae136-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae136-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae136-positions"/>
+				</vertices>
+				<triangles count="2" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae136-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae136-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae136-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 0 0 0 1 0 1 3 0 3</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae137">
+			<mesh>
+				<source id="Buildings_subset_75.dae137-positions">
+					<float_array id="Buildings_subset_75.dae137-positions-array" count="12">-7.78789 66.3642 83.9392 -0.181923 65.4846 76.3137 -7.78658 66.3632 76.3123 -0.183235 65.4856 83.9407</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae137-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae137-normals">
+					<float_array id="Buildings_subset_75.dae137-normals-array" count="3">-0.0234375 -0.898438 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae137-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae137-uv">
+					<float_array id="Buildings_subset_75.dae137-uv-array" count="8">0.741696 0.580791 0.75132 0.619141 0.741696 0.619141 0.75132 0.580791</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae137-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae137-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae137-positions"/>
+				</vertices>
+				<triangles count="2" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae137-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae137-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae137-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 0 0 0 1 0 1 3 0 3</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae138">
+			<mesh>
+				<source id="Buildings_subset_75.dae138-positions">
+					<float_array id="Buildings_subset_75.dae138-positions-array" count="12">-0.183235 65.4856 83.9407 0.759022 73.586 76.3131 -0.181923 65.4846 76.3137 0.75771 73.5866 83.94</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae138-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae138-normals">
+					<float_array id="Buildings_subset_75.dae138-normals-array" count="3">0.992188 -0.0234375 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae138-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae138-uv">
+					<float_array id="Buildings_subset_75.dae138-uv-array" count="8">0.75132 0.580791 0.761572 0.619141 0.75132 0.619141 0.761572 0.580791</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae138-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae138-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae138-positions"/>
+				</vertices>
+				<triangles count="2" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae138-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae138-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae138-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 0 0 0 1 0 1 3 0 3</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae139">
+			<mesh>
+				<source id="Buildings_subset_75.dae139-positions">
+					<float_array id="Buildings_subset_75.dae139-positions-array" count="12">0.759022 73.586 76.3131 -6.85023 74.4649 83.9386 -6.84892 74.4639 76.3116 0.75771 73.5866 83.94</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae139-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae139-normals">
+					<float_array id="Buildings_subset_75.dae139-normals-array" count="3">0.117188 0.992188 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae139-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae139-uv">
+					<float_array id="Buildings_subset_75.dae139-uv-array" count="8">0.761572 0.619141 0.771199 0.580791 0.771199 0.619141 0.761572 0.580791</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae139-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae139-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae139-positions"/>
+				</vertices>
+				<triangles count="2" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae139-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae139-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae139-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 0 0 0 1 0 1 3 0 3</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae140">
+			<mesh>
+				<source id="Buildings_subset_75.dae140-positions">
+					<float_array id="Buildings_subset_75.dae140-positions-array" count="12">-6.84892 74.4639 76.3116 -7.78789 66.3642 83.9392 -7.78658 66.3632 76.3123 -6.85023 74.4649 83.9386</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae140-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae140-normals">
+					<float_array id="Buildings_subset_75.dae140-normals-array" count="3">-0.898438 0.117188 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae140-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae140-uv">
+					<float_array id="Buildings_subset_75.dae140-uv-array" count="8">0.731445 0.619141 0.741696 0.580791 0.741696 0.619141 0.731445 0.580791</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae140-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae140-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae140-positions"/>
+				</vertices>
+				<triangles count="2" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae140-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae140-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae140-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 0 0 0 1 0 1 3 0 3</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae141">
+			<mesh>
+				<source id="Buildings_subset_75.dae141-positions">
+					<float_array id="Buildings_subset_75.dae141-positions-array" count="12">15.5966 88.3927 76.3142 9.08612 89.2917 78.3 9.08645 89.2913 76.313 15.596 88.3927 78.3012</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae141-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae141-normals">
+					<float_array id="Buildings_subset_75.dae141-normals-array" count="3">0.140625 0.992188 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae141-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae141-uv">
+					<float_array id="Buildings_subset_75.dae141-uv-array" count="8">0.87157 0.669696 0.863309 0.679688 0.863309 0.669696 0.87157 0.679688</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae141-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae141-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae141-positions"/>
+				</vertices>
+				<triangles count="2" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae141-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae141-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae141-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 0 0 0 1 0 1 3 0 3</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae142">
+			<mesh>
+				<source id="Buildings_subset_75.dae142-positions">
+					<float_array id="Buildings_subset_75.dae142-positions-array" count="12">7.80167 79.9918 76.3137 -14.3181 -80.1089 78.3134 -14.3177 -80.1089 76.3264 7.80135 79.9921 78.3007</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae142-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae142-normals">
+					<float_array id="Buildings_subset_75.dae142-normals-array" count="3">-0.898438 0.140625 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae142-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae142-uv">
+					<float_array id="Buildings_subset_75.dae142-uv-array" count="8">0.731445 0.636493 0.934613 0.646484 0.934613 0.636493 0.731445 0.646484</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae142-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae142-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae142-positions"/>
+				</vertices>
+				<triangles count="2" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae142-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae142-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae142-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 0 0 0 1 0 1 3 0 3</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae143">
+			<mesh>
+				<source id="Buildings_subset_75.dae143-positions">
+					<float_array id="Buildings_subset_75.dae143-positions-array" count="12">-14.7016 -82.8865 78.3137 -8.18947 -83.7854 76.3279 -14.7013 -82.8868 76.3267 -8.1898 -83.7854 78.3149</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae143-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae143-normals">
+					<float_array id="Buildings_subset_75.dae143-normals-array" count="3">-0.0390625 -0.898438 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae143-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae143-uv">
+					<float_array id="Buildings_subset_75.dae143-uv-array" count="8">0.971244 0.693134 0.979508 0.703125 0.971244 0.703125 0.979508 0.693134</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae143-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae143-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae143-positions"/>
+				</vertices>
+				<triangles count="2" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae143-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae143-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae143-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 0 0 0 1 0 1 3 0 3</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae144">
+			<mesh>
+				<source id="Buildings_subset_75.dae144-positions">
+					<float_array id="Buildings_subset_75.dae144-positions-array" count="12">-7.80069 -80.9692 78.3147 14.3187 79.143 76.3149 -7.80036 -80.9695 76.3277 14.3184 79.1434 78.3019</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae144-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae144-normals">
+					<float_array id="Buildings_subset_75.dae144-normals-array" count="3">0.992188 -0.046875 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae144-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae144-uv">
+					<float_array id="Buildings_subset_75.dae144-uv-array" count="8">0.934628 0.622821 0.731445 0.632813 0.934628 0.632813 0.731445 0.622821</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae144-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae144-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae144-positions"/>
+				</vertices>
+				<triangles count="2" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae144-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae144-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae144-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 0 0 0 1 0 1 3 0 3</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae145">
+			<mesh>
+				<source id="Buildings_subset_75.dae145-positions">
+					<float_array id="Buildings_subset_75.dae145-positions-array" count="21">-47.4874 17.5653 59.9216 -47.4877 17.5653 60.7418 -47.487 17.5653 58.3041 -37.7377 16.355 59.9235 -37.7387 16.3556 66.1479 -47.6921 17.5909 60.7418 -47.6931 17.5915 66.146</float_array>
+					<technique_common>
+						<accessor count="7" source="#Buildings_subset_75.dae145-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae145-normals">
+					<float_array id="Buildings_subset_75.dae145-normals-array" count="3">0.125 0.992188 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae145-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae145-uv">
+					<float_array id="Buildings_subset_75.dae145-uv-array" count="12">0.63862 0.615187 0.63862 0.619311 0.63862 0.607053 0.65097 0.615187 0.65097 0.646484 0.638361 0.646484</float_array>
+					<technique_common>
+						<accessor count="6" source="#Buildings_subset_75.dae145-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae145-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae145-positions"/>
+				</vertices>
+				<triangles count="5" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae145-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae145-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae145-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 0 0 0 1 0 1 3 0 3 3 0 3 1 0 1 4 0 4 4 0 4 1 0 1 5 0 1 4 0 4 5 0 1 6 0 5</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae146">
+			<mesh>
+				<source id="Buildings_subset_75.dae146-positions">
+					<float_array id="Buildings_subset_75.dae146-positions-array" count="18">-49.8286 0.38353 59.923 -51.2131 -10.7566 66.1483 -51.2118 -10.7572 59.9239 -49.8286 0.38353 60.7432 -47.6931 17.5915 66.146 -47.6921 17.5909 60.7418</float_array>
+					<technique_common>
+						<accessor count="6" source="#Buildings_subset_75.dae146-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae146-normals">
+					<float_array id="Buildings_subset_75.dae146-normals-array" count="3">-0.898438 0.125 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae146-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae146-uv">
+					<float_array id="Buildings_subset_75.dae146-uv-array" count="12">0.616564 0.615187 0.602452 0.646484 0.602452 0.615187 0.616564 0.619311 0.638361 0.646484 0.638361 0.619311</float_array>
+					<technique_common>
+						<accessor count="6" source="#Buildings_subset_75.dae146-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae146-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae146-positions"/>
+				</vertices>
+				<triangles count="4" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae146-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae146-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae146-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 0 0 0 1 0 1 3 0 3 3 0 3 1 0 1 4 0 4 3 0 3 4 0 4 5 0 5</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae147">
+			<mesh>
+				<source id="Buildings_subset_75.dae147-positions">
+					<float_array id="Buildings_subset_75.dae147-positions-array" count="12">-51.2131 -10.7566 66.1483 -41.2584 -11.9928 59.9258 -51.2118 -10.7572 59.9239 -41.2594 -11.9921 66.1502</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae147-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae147-normals">
+					<float_array id="Buildings_subset_75.dae147-normals-array" count="3">-0.03125 -0.898438 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae147-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae147-uv">
+					<float_array id="Buildings_subset_75.dae147-uv-array" count="8">0.602452 0.646484 0.589844 0.615187 0.602452 0.615187 0.589844 0.646484</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae147-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae147-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae147-positions"/>
+				</vertices>
+				<triangles count="2" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae147-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae147-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae147-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 0 0 0 1 0 1 3 0 3</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="Buildings_subset_75.dae148">
+			<mesh>
+				<source id="Buildings_subset_75.dae148-positions">
+					<float_array id="Buildings_subset_75.dae148-positions-array" count="12">-41.2594 -11.9921 66.1502 -37.7377 16.355 59.9235 -41.2584 -11.9928 59.9258 -37.7387 16.3556 66.1479</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae148-positions-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae148-normals">
+					<float_array id="Buildings_subset_75.dae148-normals-array" count="3">0.992188 -0.03125 0</float_array>
+					<technique_common>
+						<accessor count="1" source="#Buildings_subset_75.dae148-normals-array" stride="3">
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Buildings_subset_75.dae148-uv">
+					<float_array id="Buildings_subset_75.dae148-uv-array" count="8">0.686879 0.646484 0.65097 0.615187 0.686879 0.615187 0.65097 0.646484</float_array>
+					<technique_common>
+						<accessor count="4" source="#Buildings_subset_75.dae148-uv-array" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Buildings_subset_75.dae148-vertices">
+					<input semantic="POSITION" source="#Buildings_subset_75.dae148-positions"/>
+				</vertices>
+				<triangles count="2" material="Buildings_subset_75.dae0material">
+					<input offset="0" semantic="VERTEX" source="#Buildings_subset_75.dae148-vertices" set="0"/>
+					<input offset="1" semantic="NORMAL" source="#Buildings_subset_75.dae148-normals" set="0"/>
+					<input offset="2" semantic="TEXCOORD" source="#Buildings_subset_75.dae148-uv" set="0"/>
+					<p>1 0 1 0 0 0 2 0 2 0 0 0 1 0 1 3 0 3</p>
+				</triangles>
+			</mesh>
+		</geometry>
+	</library_geometries>
+	<library_images>
+		<image id="Buildings_subset_75.dae0img" height="0" width="0">
+			<init_from>./Buildings_subset_75.dae0.jpg</init_from>
+		</image>
+	</library_images>
+	<library_effects>
+		<effect id="Buildings_subset_75.dae0effect">
+			<profile_COMMON>
+				<newparam sid="surface">
+					<surface type="2D">
+						<init_from>Buildings_subset_75.dae0img</init_from>
+					</surface>
+				</newparam>
+				<newparam sid="sampler">
+					<sampler2D>
+						<source>surface</source>
+						<minfilter>LINEAR_MIPMAP_LINEAR</minfilter>
+						<magfilter>LINEAR</magfilter>
+					</sampler2D>
+				</newparam>
+				<technique sid="common">
+					<phong>
+						<diffuse>
+							<texture texture="sampler" texcoord="uv0"/>
+						</diffuse>
+					</phong>
+				</technique>
+			</profile_COMMON>
+		</effect>
+	</library_effects>
+	<library_materials>
+		<material id="Buildings_subset_75.dae0material">
+			<instance_effect url="#Buildings_subset_75.dae0effect"/>
+		</material>
+	</library_materials>
+	<library_visual_scenes>
+		<visual_scene id="Multipatch-Converted-Scene">
+			<node id="Buildings_subset_75.dae">
+				<translate>0 0 0</translate>
+				<instance_geometry url="#Buildings_subset_75.dae0">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae75">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae76">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae77">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae78">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae79">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae80">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae81">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae82">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae83">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae84">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae85">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae86">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae87">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae88">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae89">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae90">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae91">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae92">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae93">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae94">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae95">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae96">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae97">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae98">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae99">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae100">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae101">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae102">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae103">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae104">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae105">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae106">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae107">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae108">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae109">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae110">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae111">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae112">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae113">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae114">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae115">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae116">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae117">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae118">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae119">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae120">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae121">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae122">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae123">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae124">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae125">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae126">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae127">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae128">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae129">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae130">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae131">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae132">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae133">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae134">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae135">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae136">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae137">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae138">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae139">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae140">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae141">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae142">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae143">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae144">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae145">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae146">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae147">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+				<instance_geometry url="#Buildings_subset_75.dae148">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="Buildings_subset_75.dae0material" target="#Buildings_subset_75.dae0material">
+								<bind_vertex_input semantic="uv0" input_semantic="TEXCOORD" input_set="0"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+			</node>
+		</visual_scene>
+	</library_visual_scenes>
+	<scene>
+		<instance_visual_scene url="#Multipatch-Converted-Scene"/>
+	</scene>
+</COLLADA>

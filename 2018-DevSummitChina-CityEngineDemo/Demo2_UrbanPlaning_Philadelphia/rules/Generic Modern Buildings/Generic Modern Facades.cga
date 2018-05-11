@@ -1,0 +1,683 @@
+/**
+ * File:    Generic Modern Facades.cga
+ * Created: 3 Mar 2011 02:28:03 GMT
+ * Author:  Pascal
+ */
+
+version "2017.0"
+
+
+
+################################################################
+## ATTRIBUTES
+##
+
+
+## Model Options	
+
+@Group("Model Options",0) @Order(1) 
+attr Generate_Facade = false
+
+@Group("Model Options",0) @Order(2) @Range("High","Medium","Low")
+attr Level_of_Detail = "High" 
+
+@Group("Model Options",0) @Order(3) 
+attr Transparent = false
+
+
+## Facade Design	
+
+@Group("Facade Design",1) @Order(2) 
+@Range("[WO]*W","o[WO]*Wo","O[Wo]*WO","wo[WO]*Wow","Wo[WO]*WoW","WO[Wo]*WOW","Rhythm1")
+@Description("Name of floor pattern for uneven floors ('W' stands for Wall, 'O' for Opening, 'w' and 'o' for smaller versions thereof)") 
+attr Main_Pattern_A = "[WO]*W"	
+
+@Group("Facade Design") @Order(3) 
+@Range("[WO]*W","o[WO]*Wo","O[Wo]*WO","wo[WO]*Wow","Wo[WO]*WoW","WO[Wo]*WOW","Rhythm1")
+@Description("Name of floor pattern for uneven floors ('W' stands for Wall, 'O' for Opening, 'w' and 'o' for smaller versions thereof)") 
+attr Main_Pattern_B = "[WO]*W"
+
+@Group("Facade Design") @Order(4) 
+@Range("Same as Main","WOW","WoW","wOWOw","woWow","woW","wOwoW","w[oW]*w")
+@Description("Floor Pattern for sides ('W' stands for floating Wall, 'O' for Opening, 'w' and 'o' for smaller versions thereof)") 
+attr Side_Pattern = "Same as Main"
+
+@Group("Facade Design") @Order(5) 
+@Range("None","On Front","On Rear")
+attr Balconies = "None"
+
+@Group("Facade Design") @Order(6) 
+@Range("[WB]*W","b[WB]*Wb","Alternating")
+attr Balcony_Pattern = "[WB]*W"
+
+## Main Parameters
+
+@Group("Main Parameters",2) @Order(1) @Range(5,15)
+attr Win_Width = 4
+
+@Group("Main Parameters") @Order(2) @Range(1,4)
+attr Win_Height = Standard_Floor_Height - Cill_Height - Slab_Thickness 		# per default, the windows go up to the ceiling height
+
+@Group("Main Parameters") @Order(3) @Range(0,2)
+attr Cill_Height = 0.3
+
+@Group("Main Parameters") @Order(4) @Range(0,5)
+attr Wall_Width = 2
+
+@Group("Main Parameters") @Order(5) @Range(5,20)
+attr Balcony_Width = 8
+
+## Windows
+
+@Group("Windows") @Order(0) @Range("Wall Center","Inside Flush", "Outside Flush")
+attr Win_Position = "Wall Center"
+
+@Group("Windows",3) @Order(1) @Range(0.7,2)
+attr Panel_Width = 1
+
+@Group("Windows") @Order(2) @Range(0,0.3)
+attr Frame_Width = 0.1
+
+@Group("Windows") @Order(3) @Range(0,0.3)
+attr Frame_Depth = Frame_Width*2
+
+@Group("Windows") @Order(4)
+attr Frame_Color = "#999999"
+
+@Group("Windows") @Order(5) @Range("CE Blue","CE Dark Blue","CE Green","CE Brown","CE Black","iRay Glass")
+attr Glass_Material = "CE Dark Blue"
+
+## Walls
+
+@Group("Walls",4) @Order(1) 
+attr Wall_Texture = "buildings/wall_textures/concrete/wall_concrete_1.jpg"
+
+@Group("Walls") @Order(2) 
+attr Wall_Color ="#ffffff"
+
+@Group("Walls") @Order(3) @Range(0.2,0.7)
+attr Wall_Thickness = 0.4
+
+@Group("Walls") @Order(4) @Range(0.2,1)
+attr Slab_Thickness = 0.7
+
+@Group("Walls") @Order(5) @Range(0,1)
+attr Parapet_Height = 0.4
+
+## Balconies
+
+@Group("Balconies",5) @Order(2) @Range(0,5)
+attr Balcony_Depth = 2
+
+@Group("Balconies") @Order(4) @Range(0.7,1.1)
+attr Railing_Height = 1
+
+## Panels
+
+@Group("Panels",6) @Order(1) @Range("None","On Sides", "All") @Description("Turn on to split the whole model into rectangular panels (usable e.g. for analysis)")
+attr Panels_Generate = "None"
+
+@Group("Panels") @Order(2) @Range(1,20) @Description("Note that panel size is adjusted/rounded to the geometry's dimensions on the side")
+attr Panel_Size = 5
+
+@Group("Panels") @Order(3) @Range(0,3) @Description("Distance of the sampling point in front of the panel's center.")
+attr Panel_Sampling_Point_Distance = 0.1
+
+
+
+## Hidden Attributes used for Reporting ########################
+
+@Hidden
+attr floorIdx = -1
+@Hidden
+attr nFloors = -1
+@Hidden
+attr tileIdx = -1
+@Hidden
+attr nTiles = -1
+
+
+## Hidden Attributes driven by Master Rule ########################
+
+@Hidden
+attr Ground_Floor_Height = 5
+@Hidden
+attr Standard_Floor_Height = 4
+
+
+################################################################
+## CONSTANTS
+##
+
+const frameDepth = case highLOD: Frame_Depth else: 0
+const winSetback = 
+	case lowLOD							: 0
+	case Win_Position == "Outside Flush": 0
+	case Win_Position == "Inside Flush"	: Wall_Thickness-frameDepth-0.02
+	else 								: Wall_Thickness/2-frameDepth/2		# Wall Center
+
+# just for short notations
+const walW = Wall_Width
+const winW = Win_Width
+const panW = Panel_Width
+const balW = Balcony_Width
+const lowLOD 	= Level_of_Detail == "Low" 
+const midLOD 	= Level_of_Detail == "Medium"
+const highLOD 	= Level_of_Detail == "High"
+
+################################################################
+## FUNCTIONS
+##
+
+getWallBottom 		= case floorIdx > 0: Cill_Height else: 0
+getWinHeight		= case floorIdx > 0: Win_Height  else: Win_Height + Cill_Height + Ground_Floor_Height - Standard_Floor_Height
+adjustWallHeight 	= case floorIdx==nFloors-1: scope.sy+Parapet_Height else: scope.sy
+
+# pattern switching
+isConstant = Main_Pattern_A=="o[WO]*Wo" || Main_Pattern_B=="o[WO]*Wo" || Main_Pattern_A=="O[Wo]*WO" || Main_Pattern_B=="O[Wo]*WO" # patterns which need to go all around
+mainPattern = 
+	case front || rear || isConstant: case even(floorIdx): Main_Pattern_A else: Main_Pattern_B  # in case of an even floor, we take pattern A, otherwise pattern B
+	else                            : case even(floorIdx): Main_Pattern_B else: Main_Pattern_A  # on the left and right we alternate the two patterns different
+balconyPattern = 
+	case Balcony_Pattern=="Alternating": case even(floorIdx): "[WB]*W" else: "b[WB]*Wb"
+	else                               : Balcony_Pattern	
+	
+# utils
+even(val) 	= val % 2 == 0
+uneven(val) = val % 2 == 1
+rear  = geometry.isOriented(object.back)
+left  = geometry.isOriented(object.left)
+right = geometry.isOriented(object.right)
+front = geometry.isOriented(object.front)
+
+# for adjacency checks & handling
+adjacentToBalconiesOnRight = left&&Balconies=="On Front"  || right&&Balconies=="On Rear"
+adjacentToBalconiesOnLeft  = right&&Balconies=="On Front" || left&&Balconies=="On Rear"
+windowsOnCorners = case mainPattern == "o[WO]*Wo" || mainPattern == "O[Wo]*WO": 1 else: 0
+balconyOnCorners = case balconyPattern == "b[WB]*Wb": 1 else: 0
+
+# for balcony tile
+glassBalconyLeft  = case tileIdx == 0       : 0 else: (1+floorIdx%2)*panW
+glassBalconyRight = case tileIdx == nTiles-1: 0 else: (1+floorIdx%2)*panW
+
+# for panels
+getWorldDir = 
+	case geometry.isOriented(world.north)	: "north"
+	case geometry.isOriented(world.south)	: "south"
+	case geometry.isOriented(world.west)	: "west"
+	case geometry.isOriented(world.east)	: "east"
+	case geometry.isOriented(world.up)		: "up"
+	else									: "down"
+getLocalDir = 
+	case geometry.isOriented(object.front)	: "front"
+	case geometry.isOriented(object.back)	: "rear"
+	case geometry.isOriented(object.left)	: "left"
+	case geometry.isOriented(object.right)	: "right"
+	case geometry.isOriented(object.top)	: "top"
+	else									: "bottom"	
+
+
+
+################################################################
+## RULES
+##
+		
+## Startshape is a floor volume here ################################
+
+FloorMass -->
+	FloorMass(1,2)	# default case
+	
+FloorMass(idx,n) -->
+	case !Generate_Facade:
+		case Transparent:
+			set(material.opacity,0.5)
+			Mass.
+			Reports_FloorMass
+		else:
+			Mass.
+			Reports_FloorMass
+	else:
+		set(floorIdx,idx) set(nFloors,n)
+		comp(f){ side: FloorSide }
+		Slab
+		Reports_FloorMass
+
+## Floor ################################
+
+Reports_FloorMass -->
+	comp(f) { top: NIL | bottom: NIL
+			| world.south: report("FacadeOrientation.South", geometry.area)
+			| world.east: report("FacadeOrientation.East", geometry.area)
+			| world.west: report("FacadeOrientation.West", geometry.area)
+			| world.north: report("FacadeOrientation.North", geometry.area) }
+
+FloorSide -->	
+	setupProjection(0, scope.xy, ~4, ~4, 1)
+	s('1,adjustWallHeight,'1)
+	split(y){ getWallBottom: Wall | getWinHeight: FloorPattern | ~1: Wall }
+
+FloorPattern --> 
+//	case scope.sx < winW+walW:
+//		Wall
+	case front && Balconies=="On Front" || rear && Balconies=="On Rear":
+		BalconyPattern 		 
+	case Side_Pattern != "Same as Main":
+		case left || right: SidePattern else: MainPattern
+	else: 
+		MainPattern
+
+## Main Pattern --------------------
+
+MainPattern --> 
+	case adjacentToBalconiesOnRight:
+		split(x){ ~1: MainPatternDispatcher | windowsOnCorners*walW: Wall | balconyOnCorners*(balW+walW)/2: Balcony }
+	case adjacentToBalconiesOnLeft:
+		split(x){ balconyOnCorners*(balW+walW)/2: Balcony | windowsOnCorners*walW: Wall | ~1: MainPatternDispatcher }
+	else:
+		MainPatternDispatcher
+		
+MainPatternDispatcher -->
+	case mainPattern == "[WO]*W": 
+		split(x){ { ~walW: Wall | winW: Tile }* | ~walW: Wall }
+	case mainPattern == "o[WO]*Wo":
+		split(x){ winW/2+walW/2: Tile | { ~walW: Wall | winW: Tile }* | ~walW: Wall | winW/2+walW/2: Tile }
+	case mainPattern == "O[Wo]*WO": #hmm
+		//split(x){ winW+walW/2: Tile | { ~walW: Wall | winW/2: Tile }* | ~walW: Wall | winW+walW/2: Tile }
+		split(x){ winW+walW/2: Tile | { ~walW: Wall | panW: Tile }* | ~walW: Wall | winW+walW/2: Tile }
+	case mainPattern == "wo[WO]*Wow":
+		//split(x){ ~walW/2: Wall | winW/2: Tile | { ~walW: Wall | winW: Tile }* | ~walW: Wall | winW/2: Tile | ~walW/2: Wall }
+		split(x){ ~walW/2: Wall | panW: Tile | { ~walW: Wall | winW: Tile }* | ~walW: Wall | panW: Tile | ~walW/2: Wall }
+	case mainPattern == "Wo[WO]*WoW":
+		//split(x){ ~walW: Wall | winW/2-walW/2: Tile | { ~walW: Wall | winW: Tile }* | ~walW: Wall | winW/2-walW/2: Tile | ~walW: Wall }
+		split(x){ ~walW: Wall | panW: Tile | { ~walW: Wall | winW: Tile }* | ~walW: Wall | panW: Tile | ~walW: Wall }
+	case mainPattern == "WO[Wo]*WOW":
+		//split(x){ ~walW: Wall | winW-walW/2: Tile | { ~walW: Wall | winW/2: Tile }* | ~walW: Wall | winW-walW/2: Tile | ~walW: Wall }
+		split(x){ ~walW: Wall | winW-walW/2: Tile | { ~walW: Wall | panW: Tile }* | ~walW: Wall | winW-walW/2: Tile | ~walW: Wall }
+	case mainPattern == "Rhythm1":
+		split(x){ ~walW/2: Wall | { winW+walW: Tile }* | ~walW/2: Wall }
+	else:
+		Wall
+
+## Side Pattern --------------------
+
+SidePattern -->
+	case adjacentToBalconiesOnRight:
+		case scope.sx < winW+walW:
+			case balconyPattern == "b[WB]*Wb": Balcony else: Wall
+		else:
+			split(x){ windowsOnCorners*(winW+walW)/2: Tile | ~1: SidePatternDispatcher | balconyOnCorners*(balW+walW)/2: Balcony }
+	case adjacentToBalconiesOnLeft:
+		case scope.sx < winW+walW:
+			case balconyPattern == "b[WB]*Wb": Balcony else: Wall
+		else:
+			split(x){ balconyOnCorners*(balW+walW)/2: Balcony | ~1: SidePatternDispatcher | windowsOnCorners*(winW+walW)/2: Tile }
+	else:
+		split(x){ windowsOnCorners*(winW+walW)/2: Tile | ~1: SidePatternDispatcher | windowsOnCorners*(winW+walW)/2: Tile }
+
+
+SidePatternDispatcher -->
+	case Side_Pattern == "WOW":
+		split(x){ ~1: Wall | winW: Win | ~1: Wall }
+	case Side_Pattern == "WoW":
+		split(x){ ~1: Wall | panW: Win | ~1: Wall }
+	case Side_Pattern == "wOWOw":
+		split(x){ walW: Wall | winW: Win | ~1: Wall | winW: Win | walW: Wall }
+	case Side_Pattern == "woWow":
+		split(x){ walW: Wall | panW: Win | ~1: Wall | panW: Win | walW: Wall }
+	case Side_Pattern == "woW":
+		case right: split(x){ walW: Wall | panW: Win | ~1: Wall }
+		else      : split(x){ ~1: Wall | panW: Win | walW: Wall }
+	case Side_Pattern == "wOwoW":
+		case right: split(x){ walW: Wall | winW: Win | walW: Wall | panW: Win | ~1: Wall }
+		else      : split(x){ ~1: Wall | panW: Win | walW: Wall | winW: Win | walW: Wall }
+	case Side_Pattern == "w[oW]*w":
+		case right&&even(floorIdx) || left&&uneven(floorIdx): split(x){ walW: Wall | { panW: Win | ~walW*4: Wall }* }
+		else                                                : split(x){ { ~walW*4: Wall | panW: Win }* | walW: Wall }
+	else:
+		Wall
+		
+## Balcony Pattern --------------------
+
+BalconyPattern -->
+	case balconyPattern == "[WB]*W":
+		case scope.sx < winW+walW:
+			Wall 
+		else:
+			split(x){ { walW: Wall | ~balW: Balcony }* | walW: Wall }
+	case balconyPattern == "b[WB]*Wb":
+		case scope.sx < winW+walW:
+			Balcony 
+		else:
+			split(x){ ~(balW+walW)/2: Balcony | { walW: Wall | ~balW: Balcony }* | walW: Wall | ~(balW+walW)/2: Balcony }
+	else:
+		Balcony
+
+
+## Tile ################################
+
+Tile -->
+	set(tileIdx,split.index) set(nTiles,split.total)
+	TileDispatcher
+		
+TileDispatcher -->
+	case mainPattern == "Rhythm1":
+		case even(floorIdx+tileIdx)	: split(x){ walW/2: Wall | ~winW/2: Win }* 
+		else						: split(x){ ~winW/2: Win | walW/2: Wall }*
+	else:
+		Win
+	//Rail 
+
+
+## Balcony ################################
+
+
+Balcony -->
+	case scope.sx < winW+walW: Balcony(0,0) else:
+		set(tileIdx,split.index) set(nTiles,split.total)
+		Balcony(glassBalconyLeft,glassBalconyRight)
+
+Balcony(winWidthLeft,winWidthRight) -->
+	case lowLOD:
+		split(x){ winWidthLeft : Win(0) 
+				| ~1 : Rail s(scope.sx-winSetback,'1,-Balcony_Depth+Wall_Thickness) t(winSetback/2,0,0) primitiveCube() comp(f){ front: NIL | side: Win(0) }
+				| winWidthRight: Win(0) }
+	else:		
+		Rail t(0,0,-winSetback)
+		split(x){ winWidthLeft : Win(0) 
+				| ~1 : s(scope.sx-winSetback,'1,-Balcony_Depth+Wall_Thickness) t(winSetback/2,0,0) primitiveCube() comp(f){ front: NIL | side: Win(0) }
+				| winWidthRight: Win(0) }
+
+
+
+## Windows ################################
+	
+Win -->
+	case lowLOD:
+		Win(0)
+	else:	
+		Win(winSetback)	
+	
+Win(dz) -->
+	case lowLOD || Frame_Width <= 0: 
+		t(0,0,-dz) trim 
+		Glass
+	else:
+		t(0,0,-dz) trim 
+		split(y){ Frame_Width : Frame 
+				| ~1: split(x){ Frame_Width: Frame | { ~panW: t(0,0,-frameDepth/2) Glass | Frame_Width: Frame }* }
+				| Frame_Width : Frame }
+
+Frame --> 
+	case frameDepth > 0:
+		report("Facade.Frame", geometry.area(front))
+		extrude(-frameDepth) trim
+		color(Frame_Color)
+	else:
+		report("Facade.Frame", geometry.area(front))
+		color(Frame_Color)		
+			
+Glass -->
+	GlassMaterial
+	Reports_Glass
+	
+GlassMaterial -->
+	case Glass_Material == "CE Blue":
+		color(0.7,0.75,1)
+		set(material.ambient.r,0) set(material.ambient.g,0) set(material.ambient.b,1)
+		set(material.specular.r,0.8) set(material.specular.g,0.8) set(material.specular.b,0.8)
+		set(material.reflectivity,0.8) set(material.shininess,50) set(material.opacity,0.6)	GlassPanels
+	case Glass_Material == "CE Dark Blue":
+		color(0.2,0.2,0.25)
+		set(material.ambient.r,0) set(material.ambient.g,0) set(material.ambient.b,0.1)
+		set(material.specular.r,0.8) set(material.specular.g,0.8) set(material.specular.b,0.8)
+		set(material.reflectivity,0.6) set(material.shininess,50) set(material.opacity,0.8)	GlassPanels
+	case Glass_Material == "CE Green":
+		color(0.4,0.5,0.4)
+		set(material.ambient.r,0) set(material.ambient.g,0.2) set(material.ambient.b,0.05)
+		set(material.specular.r,0.8) set(material.specular.g,0.8) set(material.specular.b,0.8)
+		set(material.reflectivity,0.8) set(material.shininess,50) set(material.opacity,0.6)	GlassPanels
+	case Glass_Material == "CE Brown":
+		color(0.3,0.25,0.2)
+		set(material.ambient.r,0.2) set(material.ambient.g,0.1) set(material.ambient.b,0)
+		set(material.specular.r,0.8) set(material.specular.g,0.8) set(material.specular.b,0.8)
+		set(material.reflectivity,0.8) set(material.shininess,50) set(material.opacity,0.6)	GlassPanels
+	case Glass_Material == "CE Black":
+		color(0.1,0.1,0.1)
+		set(material.specular.r,0.8) set(material.specular.g,0.8) set(material.specular.b,0.8)
+		set(material.reflectivity,0.7) set(material.shininess,50) set(material.opacity,0.8)	GlassPanels
+	case Glass_Material == "iRay Glass":
+		color(0.35,0.37,0.5)
+ 		set(material.specular.r,0.8) set(material.specular.g,0.8) set(material.specular.b,0.8)
+  		set(material.reflectivity,0.8) set(material.shininess,128) set(material.opacity,0.8) GlassPanels
+	else:
+		color(1,1,1)
+		set(material.opacity,0.8) GlassPanels
+
+GlassPanels -->
+	case Panels_Generate == "None":
+		Glass.
+	else:
+		Panels("Glass")
+
+Reports_Glass -->
+	report("Facade.Glass", geometry.area(front))
+	NIL		
+
+## Wall ################################
+
+Wall -->
+	case lowLOD: 
+		WallSide
+	else:
+		Wall(Wall_Thickness)
+
+Wall(thickness) -->
+	case midLOD: 
+		s('1,'1,thickness) t(0,0,'-1) 
+		primitiveCube() WallSide
+	else:
+		s('1,'1,thickness) t(0,0,'-1) 
+		primitiveCube() comp(f){ side = WallSide | all = WallSideProj}
+
+WallSideProj -->
+	setupProjection(0, scope.xy, ~4, 4)
+	WallSide
+
+WallSide -->
+	projectUV(0) texture(Wall_Texture)
+	color(Wall_Color) set(material.ambient.r,0.2) set(material.ambient.g,0.2) set(material.ambient.b,0.2)
+	report("Facade.Wall", geometry.area(front))
+	WallPanels
+
+WallPanels -->
+	case Panels_Generate == "None":
+		Wall.
+	else:
+		Panels("Wall")
+
+
+## Railing ################################
+		
+Rail --> 
+	case floorIdx == 0 || scope.sx < panW*1.5:
+		NIL
+	else:
+		t(0,0,-winSetback*0.5) split(y){ Railing_Height: trim RailLoop(20) } NIL
+		
+RailLoop(n) -->
+	case n > 0: RailLoop(n-1) else: Glass # just a gimmick for CE: draw the railing at last (so that the alpha looks good)
+
+
+## Slab ################################
+
+Slab -->
+	case lowLOD:
+		comp(f){ top: GravelRoof }
+	else:
+		split(y){ 0.05: NIL | ~1: comp(f){ bottom: Flooring | top: Ceiling } | Slab_Thickness: NIL }	
+	
+Ceiling -->
+	offset(-Wall_Thickness,inside) extrude(Slab_Thickness-0.05)
+	comp(f){ top: GravelRoof | all = color("#ffffff") Ceiling. }
+
+Flooring -->
+	offset(-Wall_Thickness,inside) extrude(0.05)
+	comp(f){ top: WallSideProj | all = color("#333339") Flooring. }
+
+GravelRoof -->
+	color("#ffffff")
+	setupProjection(0,scope.xy,10,10) projectUV(0)
+	texture("streets/textures/Gravel.jpg")
+	RoofPanels
+
+RoofPanels -->
+	case Panels_Generate != "All":
+		Roof.
+	else:
+		Panels("Roof")
+
+
+## Panels ################################
+
+Panels(type) -->	
+	split(x,noAdjust){ ~Panel_Size: split(y){ ~Panel_Size: Panel(type) }* }*			# THE split
+
+Panel(type) -->
+	case geometry.area() < 0.02:
+		NIL
+	else:
+		alignScopeToGeometry(zUp,0,world.lowest)
+		texture("")
+		report("ID",seedian) 																		# switching off texture
+		report("Type",type) report("Area",geometry.area)
+		report("Local Orientation",getLocalDir) report("World Orientation",getWorldDir) 
+		Panel.
+		[ s(0,0,0) center(xyz) t(0,0,Panel_Sampling_Point_Distance) 
+		  comp(v){ 0: report("Z",scope.elevation) SamplingPoint. } ]
+
+
+
+
+################################################################
+## ADDITIONAL/OVERWRITE RULES 
+##
+
+style Residential_3
+
+## Floor Left ################################
+
+//FloorPatternLeftOCCL -->
+MainPatternDispatcher -->
+	case even(floorIdx):	
+		case touches(intra):
+			Wall
+		else:
+			split(x){ panW: Wall | { ~winW*2/3: TilePatternSide. }* | 2*panW: Win | panW+Balcony_Depth+winSetback:  Wall } 
+	else : 
+		case inside(intra):
+			split(x){ ~1: Wall(Wall_Thickness) | Wall_Thickness: NIL }
+			split(x){ ~1: s('1,'1,Balcony_Depth*2) t(0,0,'-1) primitiveCube() comp(f){ right: Windows. } | Balcony_Depth+winSetback: NIL }
+		case touches(intra):
+			split(x){ '0.5: WallCheck | '0.5: set(trim.vertical,false) WallCheck }*
+			split(x){ ~1: s('1,'1,Balcony_Depth*2) t(0,0,'-1) primitiveCube() comp(f){ right: Windows. } | Balcony_Depth+winSetback: NIL }
+		else:
+			split(x){ { ~winW: TilePatternSide. }* | 2*panW+Balcony_Depth+winSetback: Balcony }
+
+WallCheck -->
+	case inside(intra): NIL
+	else: Wall(Wall_Thickness*2)
+
+## Floor Right ################################
+
+FloorPatternRightOCCL -->  
+	case even(floorIdx):	
+		case touches(intra):
+			Wall
+		else:
+			split(x){ panW+Balcony_Depth+winSetback: Wall | 2*panW: Tile | { winW*2/3: TilePatternSide. }* | panW: Wall } 
+	else : 
+		case inside(intra):
+			split(x){ Wall_Thickness: NIL | ~1: Wall(Wall_Thickness) }
+			split(x){ Balcony_Depth+winSetback: NIL | ~1: s('1,'1,Balcony_Depth*2) t(0,0,'-1) primitiveCube() comp(f){ left: Windows. } }
+		case touches(intra):
+			split(x){ '0.5: set(trim.vertical,false) WallCheck | '0.5: WallCheck }*
+			split(x){ Balcony_Depth+winSetback: NIL | ~1: s('1,'1,Balcony_Depth*2) t(0,0,'-1) primitiveCube() comp(f){ left: Windows. } }
+		else:
+			split(x){ 2*panW+Balcony_Depth+winSetback: Balcony | { winW: TilePatternSide. }*  }	
+
+## Floor Balconies ################################
+
+
+
+################################################################
+## STYLES
+##
+
+style Residential_1
+attr Generate_Facade = true
+attr Balconies = "On Rear"
+attr Main_Pattern_B = "o[WO]*Wo"
+attr Main_Pattern_A = "O[Wo]*WO"
+attr Side_Pattern = "w[oW]*w"
+attr Balcony_Pattern = "Alternating"
+attr Win_Width = 4.0
+attr Wall_Width = 3.0
+attr Glass_Material = "CE Blue"
+attr Balcony_Width = 12.0
+
+style Residential_2
+attr Generate_Facade = true
+attr Side_Pattern = "w[oW]*w"
+attr Balconies = "On Rear"
+attr Panel_Width = 2.0
+attr Win_Width = 3.0
+attr Wall_Width = 1.0
+attr Balcony_Width = 10.0
+attr Frame_Color = "#D4D4D4"
+attr Glass_Material = "CE Black"
+attr Wall_Texture = "buildings/wall_textures/wood/wall_wood_2.jpg"
+
+style Office_1
+attr Generate_Facade = true
+attr Main_Pattern_B = "o[WO]*Wo"
+attr Balconies = "None"
+attr Win_Width = 3.0
+attr Wall_Width = 1.0
+attr Panel_Width = 1.5
+attr Frame_Width = 0.17
+attr Frame_Color = "#373737"
+attr Glass_Material = "CE Black"
+attr Wall_Texture = "buildings/wall_textures/stone/wall_stone_9.jpg"
+
+style Office_2
+attr Generate_Facade = true
+attr Main_Pattern_A = "o[WO]*Wo"
+attr Main_Pattern_B = "o[WO]*Wo"
+attr Balconies = "None"
+attr Win_Width = 6.0
+attr Win_Height = 3.6
+attr Wall_Width = 0.5
+attr Cill_Height = 0.0
+attr Panel_Width = 1.0
+attr Frame_Color = "#4E4E4E"
+attr Glass_Material = "CE Brown"
+attr Wall_Texture = "buildings/wall_textures/concrete/wall_concrete_7.jpg"
+attr Wall_Thickness = 0.2
+attr Slab_Thickness = 0.5
+
+style Office_3
+attr Generate_Facade = true
+attr Main_Pattern_A = "O[Wo]*WO"
+attr Main_Pattern_B = "wo[WO]*Wow"
+attr Balconies = "None"
+attr Win_Width = 10.0
+attr Wall_Width = 3.0
+attr Panel_Width = 3.0
+attr Frame_Width = 0.17
+attr Frame_Color = "#353535"
+attr Glass_Material = "CE Dark Blue"
+attr Wall_Texture = "buildings/wall_textures/concrete/wall_concrete_9.jpg"
+attr Wall_Thickness = 0.7
+
+
+

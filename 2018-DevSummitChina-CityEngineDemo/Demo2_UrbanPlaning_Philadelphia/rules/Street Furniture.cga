@@ -1,0 +1,82 @@
+/**
+ * File:    Street Furniture.cga
+ * Created: 23 Nov 2011 09:53:38 GMT
+ */
+
+
+version "2011.1"
+
+
+##############################################
+# Attributes
+#
+
+# Driven by Object Attributes -----------
+
+@Group("ATTRS",1) @Order(1) @Range("Fountain", "Light Poles", "Park Bench", "Parking Meter", "Picnic Table", "Signs", "Traffic Controls", "Trashbin")
+attr TYPE = "Traffic Controls"
+
+@Group("ATTRS",1) @Order(2) @Range(
+	"Logan Circle", 										# Fountain
+	"360Bulb", "Globe", "LightwFlag", "Split and Tall", 	# Light Poles
+	"Green", 												# Park Bench
+	"Single", 												# Parking Meter
+	"Brown", 												# Picnic Table
+	"Commercial", "Stop Sign",								# Signs 
+	"2-Way", "4-Way", "Overhand", 							# Traffic Controls
+	"Red") 													# Trashbin
+attr SPECIFIC = ""
+
+@Group("ATTRS",1) @Order(3) @Range(1,30)
+attr SIZE = 20
+
+@Group("ATTRS",1) @Order(4) @Range(360)
+attr ROTATION = 0
+
+# Model Options -----------
+
+@Group("OPTIONS",2) @Order(1) 
+attr MODEL_ASSET =
+	case TYPE == "Light Poles" :
+		case SPECIFIC == "360Bulb" 		: "assets/streets/lamps/lightPole360.obj"
+		case SPECIFIC == "Globe" 		: "assets/streets/lamps/lightPoleGlobe.obj"
+		case SPECIFIC == "LightwFlag" 	: "assets/streets/lamps/lightPoleFlag.obj"
+		else							: "assets/streets/lamps/lightPoleSplit.obj"	
+	case TYPE == "Traffic Controls" 	:
+		case SPECIFIC == "2-Way" 		: "assets/streets/traffic_controls/trafficSignal2Way.obj"
+		case SPECIFIC == "4-Way" 		: "assets/streets/traffic_controls/trafficSignal4Way.obj"
+		else							: "assets/streets/traffic_controls/trafficSignalOverhand.obj"
+	case TYPE == "Signs" : 
+		case SPECIFIC == "Commercial" 	: "assets/streets/street_furniture/commercialSign_1.obj"
+		else							: "assets/streets/traffic_signs/stopSign.obj"
+	case TYPE == "Fountain" 			: "assets/streets/street_furniture/fountain.obj"
+	case TYPE == "Park Bench" 			: "assets/streets/street_furniture/parkBench_green.obj"
+	case TYPE == "Parking Meter" 		: "assets/streets/street_furniture/parkingMeter.obj"
+	case TYPE == "Picnic Table" 		: "assets/streets/street_furniture/picnicTable.obj"
+	case TYPE == "Trashbin"				: "assets/streets/street_furniture/trashBin_red.obj"
+	else								: ""
+		
+@Group("OPTIONS",2) @Order(2) @Range("Meters","Feet")
+attr SIZE_UNIT = "Meters"
+
+
+##############################################
+# Constants
+#
+
+const unitScale = case SIZE_UNIT=="Feet": 0.3048 else: 1
+
+
+##############################################
+# Rules
+#
+
+@StartRule
+Point -->
+	alignScopeToAxes
+	s(0,SIZE*unitScale,0) center(xz) 
+	r(0,-ROTATION,0)
+	i(MODEL_ASSET)
+	
+	
+	

@@ -1,0 +1,138 @@
+/**
+ * File:    Parcel Green Space.cga
+ * Created: 29 Mar 2011 21:32:00 GMT
+ */
+
+version "2011.1"
+
+
+import Plant_Loader:"/ESRI.lib/rules/Plants/Plant_Loader.cga" (Representation="Fan")
+
+
+################################################################
+## ATTRIBUTES
+##
+
+@Group("Model Options",0) @Order(1)
+attr Generate_Green_Space = false
+
+# Trees ---------
+
+@Group("Trees",1) @Order(1)
+attr Create_Trees = true
+
+@Group("Trees") @Order(1) @Range("low","high")
+attr Level_of_Detail = "low"
+
+@Group("Trees") @Order(1) @Range(5,25)
+attr Tree_Height = 15
+
+# Driven by Master Rule ---------
+
+@Group("From Master Rule",2) @Order(1) @Range(0,20)
+attr Setback_from_Street = 8
+
+@Group("From Master Rule") @Order(2) @Range(10,50)
+attr Unit_Width = 25
+
+
+
+################################################################
+## FUNCTIONS
+##
+
+treeName = 
+	14%:	"Balsam Fir"
+	14%:	"Flowering Dogwood"
+	14%:	"Paper Birch"
+	14%:	"Sassafras"
+	14%:	"Sweetgum"
+	14%:	"White Ash"
+	else:	"White Poplar"
+
+
+randHedge1 = 70%: 0.6 else: 0	
+randHedge2 = 20%: 0.6 else: 0	
+
+
+
+################################################################
+## RULES
+##
+
+@StartRule
+GreenSpace -->
+	GreenSpace("main")
+
+
+# Dispatcher ###################
+	
+GreenSpace(id) -->
+	case !Generate_Green_Space: NIL
+	case id == "building": OpenSpace
+	case id == "street"  : Asphalt
+	case id == "border"  : Lawn
+	else                 : OpenSpace 
+	
+	
+# Dispatcher ###################
+
+OpenSpace -->
+	split(x){ { ~Unit_Width: OpenSpaceSub | 2: Gravel }* 
+			|   ~Unit_Width: OpenSpaceSub }
+
+OpenSpaceSub -->
+	50% : split(z){ (rand(5,30)): OpenSpaceSubSub }*
+	else: split(z){ 2: Gravel | (rand(5,30)): OpenSpaceSubSub }*
+	
+OpenSpaceSubSub -->
+	70%:
+		Lawn
+		offset(-1,inside)
+		shapeO(randHedge1,randHedge1,randHedge2,randHedge1)
+				{ shape: Hedge(40%: 1 else: 1.6)  | remainder: Trees(1) }
+	else:
+		Lawn
+
+# Plants ###################
+
+Trees(n) -->
+	case scope.sx > 3 && scope.sz > 3:
+		scatter(surface,n,uniform) { Tree } 
+	else:
+		NIL
+
+Tree -->
+	case Create_Trees:
+		set(Plant_Loader.Name, treeName)
+		set(Plant_Loader.Height, rand(0.8,1.2)*Tree_Height)
+		Plant_Loader.Generate
+	else:
+		NIL
+	
+Hedge(h) -->
+	extrude(world.y,h)
+	comp(f){ bottom: NIL | all:
+		setupProjection(0,scope.xy,~5,5) projectUV(0)
+		texture("vegetation/hedge.jpg") Hedge. }	
+		
+
+# Surfaces ###################
+	
+Lawn -->
+	setupProjection(0,scope.xz,~15,~15) projectUV(0)
+	texture(fileRandom("vegetation/Lawn*.jpg"))
+
+Gravel -->
+	alignScopeToGeometry(yUp,0,longest)
+	setupProjection(0,scope.xz,10,10) projectUV(0)
+	texture("streets/textures/Gravel.jpg")
+
+Asphalt -->
+	setupProjection(0,scope.xz,~3,~3) projectUV(0)
+	texture("assets/streets/textures/asphalt_brighter.jpg")	
+	
+	
+style Green	
+attr Generate_Green_Space = true	
+	

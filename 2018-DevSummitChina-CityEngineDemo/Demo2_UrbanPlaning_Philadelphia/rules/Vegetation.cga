@@ -1,0 +1,54 @@
+/**
+ * File:    Vegetation.cga
+ * Created: 12 Nov 2011 13:22:05 GMT
+ */
+
+version "2017.0"
+
+
+import Plant_Loader:"/ESRI.lib/rules/Plants/Plant_Loader.cga" (Name=Plant_Name, Height=SIZE, Representation="Fan")
+
+
+// ******************************
+// Attributes
+// ******************************
+
+@Group("From Object Attributes",1)
+
+@Order(1) @Range("Trees","Shrub","Bush","Azalia","Iris","Fern","Rhododendron")
+attr TYPE = "Trees"
+
+@Order(2) @Range(0,30)
+attr SIZE = 20
+
+// ******************************
+
+@Group("Plant",2)
+
+@Order(1) @Description("Plant name to use in Plant Loader")
+attr Plant_Name =
+	case TYPE == "Shrub":			"Smooth Sumac"
+	case TYPE == "Bush":			"Shadbush"
+	case TYPE == "Azalia":			"Rose"
+	case TYPE == "Iris":			"Orchid"
+	case TYPE == "Fern":			"Cabbage Palm Fern"
+	case TYPE == "Rhododendron":	"Rhododendron Azaleas"
+	else:
+		14%:	"Balsam Fir"
+		14%:	"Flowering Dogwood"
+		14%:	"Paper Birch"
+		14%:	"Sassafras"
+		14%:	"Sweetgum"
+		14%:	"White Ash"
+		else:	"White Poplar"
+
+
+// ******************************
+// Rules
+// ******************************
+
+@StartRule
+Point -->
+	Plant_Loader.Generate
+
+	
