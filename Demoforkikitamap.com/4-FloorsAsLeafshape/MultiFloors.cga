@@ -1,0 +1,30 @@
+/**
+ * File:    MultiFloors.cga
+ * Created: 13 Jul 2018 02:26:30 GMT
+ * Author:  Xiaoyan Mu
+ */
+
+version "2018.0"
+
+
+attr FloorNo = 10
+attr FloorHeight = 3
+@Hidden
+attr BuildingHeight = FloorHeight*FloorNo
+@Color
+attr Color = "#6892d7"
+@Range(0,1)
+attr opacity = 0.4
+
+
+@StartRule
+Lot --> 
+		extrude(BuildingHeight)  Building
+
+Building-->
+	split(y){{~FloorHeight:FloorVolume}*}		
+	
+FloorVolume -->
+  	color(Color)
+  	set(material.opacity, opacity)
+
